@@ -22,6 +22,16 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Devise authentication
+# gem 'devise', '~> 4.7', '>= 4.7.3'
+
+# Ominauth Authentication
+gem 'omniauth', '~> 1.9', '>= 1.9.1'
+gem 'omniauth-github', '~> 1.4'
+gem 'omniauth-google-oauth2', '~> 0.8.0'
+
+# gem 'activerecord-session_store', '~> 1.0' # for persistant session storage
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -31,6 +41,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'dotenv-rails'
   gem "rspec-rails"
   gem 'shoulda-matchers'
 end
