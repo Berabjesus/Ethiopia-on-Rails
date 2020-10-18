@@ -1,8 +1,10 @@
 class SessionsController < ApplicationController
-  def index
+  def create
+    
   end
 
-  def show
+  def destroy
+    
   end
 
   def oauth

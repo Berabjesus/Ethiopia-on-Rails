@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   def logged_in?
-    redirect_to new_session_path, alert: 'You are not logged in' unless session_exists? 
+    redirect_to new_user_path, alert: 'You are not logged in' unless session_exists? 
   end
 
   def session_exists?
