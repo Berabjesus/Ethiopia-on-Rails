@@ -10,8 +10,16 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+      <% if flash[:notice]%>
+        <div class="alert alert-info bg-info text-dark text-center">
+        <strong><%= notice%></strong>
+        </div>
+      <%end%>
+      <% if flash[:alert]%>
+        <div class="alert alert-warning text-center text-white bg-danger border m-0 w-100">
+        <strong class="h5"><%= alert.html_safe%></strong>
+        </div>
+      <%end%>
     <%= yield %>
   </body>
 </html>
