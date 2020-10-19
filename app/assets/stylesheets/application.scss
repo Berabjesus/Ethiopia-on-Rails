@@ -23,13 +23,49 @@
   100% {opacity: 0;-webkit-transform: translateY(-30px); visibility: hidden;}
 }
 
+.custom-border {
+  border: 3px dashed red;
+}
 // Header
 
 .nav-custom {
-  min-height: 100px;
-  border: 2px dashed red;
-  font-size: 40px;
+  min-height: 60px;
+  background-color: #fff;
 }
-h1 {
-  font-size: 24px !important;
+
+.navbar-collapse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: rebeccapurple;
+  border: 4px dashed red;
+  height: 100px;
+  transition: unset;
+  transition: 1s linear;
+  animation: unset;
 }
+
+.toggle-button,
+.toggle-button::before,
+.toggle-button::after {
+  width: 50px;
+  border-top: 0.45rem solid #847F7B;
+  border-radius: 5px;
+}
+
+.toggle-button {
+  position: relative;
+}
+
+.toggle-button::before,
+.toggle-button::after {
+  position: absolute;
+  top: -20px;
+  content: " ";
+}
+
+.toggle-button::after {
+  top: 6px;
+}
+
+// main container
