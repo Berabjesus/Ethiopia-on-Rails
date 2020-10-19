@@ -1,6 +1,15 @@
 class SessionsController < ApplicationController
+  def new
+    @session = User.new
+  end
   def create
-    
+    @user = User.find_by(name: session_params[:name])
+    if @user && @user.authenticate(session_params[:password])
+      create_session @user.id
+      redirect_to articles_path, alert: "Hi #{@user.name}"
+    else
+      render 'new'
+    end
   end
 
   def destroy
@@ -29,5 +38,9 @@ class SessionsController < ApplicationController
 
   def oauth_params
     request.env['omniauth.auth']
+  end
+
+  def session_params
+    params.permit(:name, :password, :password_confirmation)
   end
 end
