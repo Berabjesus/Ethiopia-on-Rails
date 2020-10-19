@@ -1,4 +1,3 @@
-
 <div class="border mt-3 py-3 col-sm-5 mx-auto bg-theme text-dark">
   <div class="border-bottom text-center">
     <h1>Login</h1>
@@ -22,4 +21,9 @@
     <p class="mb-2">Not Signed up?</p>
     <%= link_to 'Sign Up', new_user_path, class: 'btn-link ml-2'%>
   </div>
+</div>
+
+<div class="border mt-3">
+  <%= button_to "Log in with Google", '/auth/google_oauth2'  %>
+  <%= button_to "Log in with Github", '/auth/github'  %>
 </div>
