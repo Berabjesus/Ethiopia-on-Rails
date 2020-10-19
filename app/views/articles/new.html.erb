@@ -1,2 +1,16 @@
-<h1>Articles#new</h1>
-<p>Find me in app/views/articles/new.html.erb</p>
+<%= form_for @article, html: {class: 'form-horizontal p-4 bg-theme text-white'} do |f|%>
+  <div class = 'form-group'>
+    <%= f.label :title%>
+    <%= f.text_field :title, placeholder: "article Title", class: 'form-control'%>
+  </div>
+
+  <div class = 'form-group'>
+    <%= f.label :text%>
+    <%= f.text_area :text, placeholder: "article Description",  class: 'form-control',  cols: "100", rows: "10"%>
+  </div>
+  <div>
+    <%= f.label :picture%>
+    <%= f.file_field :picture %>
+  </div>
+  <%= f.submit 'Create article', class: 'btn btn-success'%>
+<%end%>
