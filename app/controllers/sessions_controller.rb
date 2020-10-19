@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(name: session_params[:name])
     if @user && @user.authenticate(session_params[:password])
       create_session @user.id
-      redirect_to articles_path, alert: "Hi #{@user.name}"
+      goto_to_articles_path @user.name
     else
       render 'new'
     end
@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
     end
     if user.valid?
       create_session user.id
-      redirect_to articles_path
+      goto_to_articles_path user.name
     else
       errors = '<div class= "border-bottom pb-3">Authentication Error!/div> <br>'
       errors << custom_errors(@user.errors)
@@ -42,5 +42,9 @@ class SessionsController < ApplicationController
 
   def session_params
     params.permit(:name, :password, :password_confirmation)
+  end
+
+  def goto_to_articles_path user_name
+    redirect_to articles_path, notice: "Hi #{user_name}, you have logged in successfully"
   end
 end

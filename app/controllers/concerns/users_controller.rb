@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       create_session @user.id
       redirect_to articles_path, notice: 'Sign up successful'
     else
-      errors = '<div class= "border-bottom pb-3">Signup Error!</div> <br>'
+      errors = '<div class= "border-bottom pb-3">Sign up Error</div>'
       errors << custom_errors(@user.errors)
       respond_to do |format|
         format.html { redirect_to new_user_path, alert: errors.html_safe }

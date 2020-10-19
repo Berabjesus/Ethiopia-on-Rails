@@ -6,20 +6,34 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'reset', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-      <% if flash[:notice]%>
-        <div class="alert alert-info bg-info text-dark text-center">
-        <strong><%= notice%></strong>
-        </div>
-      <%end%>
-      <% if flash[:alert]%>
-        <div class="alert alert-warning text-center text-white bg-danger border m-0 w-100">
-        <strong class="h5"><%= alert.html_safe%></strong>
-        </div>
-      <%end%>
-    <%= yield %>
+    <% if flash[:notice]%>
+      <div class="alert alert-info alert-dismissible bg-info text-info text-center bg-light border m-0 w-75 mx-auto shadow-sm">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong><%= notice.html_safe%></strong>
+      </div>
+    <%end%>
+    <% if flash[:alert]%>
+      <div class="alert alert-danger alert-dismissible text-center text-danger bg-light border m-0 w-75 mx-auto shadow-sm">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong class="h5"><%= alert.html_safe%></strong>
+      <div>
+        <a href="#" class="btn btn-light border mt-4 px-2" data-dismiss="alert" aria-label="close">Ok</a>
+      </div>
+      </div>
+    <%end%>
+
+    <header>
+      <nav class="nav-custom">
+      </nav>
+    </header>
+    
+    <main class="container">
+      <%= yield %>
+    </main>
   </body>
 </html>

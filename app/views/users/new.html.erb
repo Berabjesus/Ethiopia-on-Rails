@@ -1,34 +1,5 @@
-<div>
-  <h1 class="my-4 text-center">Sign Up</h1>
-  <%= form_for @user, html: {class: 'form-horizontal'} do |f|%>
-    <div class="form-group">
-      <%= f.label "User name: "%>
-      <%= f.text_field :name, placeholder: 'Your name here', class: 'form-control'%>  
-    </div>
-    <div class="form-group">
-      <%= f.label "Password: "%>
-      <%= f.password_field :password, placeholder: 'Your password here', class: 'form-control'%>  
-    </div>
-    <div class="form-group">
-      <%= f.label "Confirm Password: "%>
-      <%= f.password_field :password_confirmation, placeholder: 'Retype Your password here', class: 'form-control'%>  
-    </div>
-    <div class="form-group w-100 text-center">
-      <%= f.submit "Sign up", class: 'btn btn-info w-25'%>
-    </div>
-  <%end%>
-  <div class="d-flex justify-content-center">
-    <p>or</p>
-    <%= link_to 'Login', new_session_path, class: 'btn-link ml-1 text-decoration-none'%>
-  </div>
-    <div class="px-2 py-1 rounded text-center">
-      <% @user.errors.full_messages.each do |error| %>
-          <li class="text-danger list-unstyled"><%= error %></li>
-      <% end %>
-    </div>
-</div>
-
-<div class="border mt-3">
-  <%= button_to "Sign up with Google", '/auth/google_oauth2'  %>
-  <%= button_to "Sign up with Github", '/auth/github'  %>
-</div>
+<!-- <header>
+  <nav class="nav-custom">
+    <h1>asasd</h1>
+  </nav>
+</header> -->

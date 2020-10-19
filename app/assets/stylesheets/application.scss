@@ -1,1 +1,26 @@
 @import 'bootstrap/scss/bootstrap';
+@import 'users';
+
+// Defaults
+.alert-info{
+  position: fixed;
+  top: 0;
+  left: 10vw;
+  animation:alert-success 1s 1;
+  -webkit-animation:alert-success 1s 1;
+  animation-fill-mode: forwards;
+
+  animation-delay:2s;
+  -webkit-animation-delay:2s;
+  -webkit-animation-fill-mode: forwards;
+
+} 
+
+@-webkit-keyframes alert-success{
+  0%   {opacity: 1;}
+  70%  {opacity: 0.5;}
+  90% {opacity: 0.3;-webkit-transform: translateY(0px);}
+  100% {opacity: 0;-webkit-transform: translateY(-30px); visibility: hidden;}
+}
+
+// Header
