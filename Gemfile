@@ -32,6 +32,9 @@ gem 'omniauth-google-oauth2', '~> 0.8.0'
 
 # gem 'activerecord-session_store', '~> 1.0' # for persistant session storage
 
+# Image uploader
+gem 'carrierwave', '~> 2.1'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
