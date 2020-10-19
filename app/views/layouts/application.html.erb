@@ -4,15 +4,15 @@
     <title>Ethiopia on Rails</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag 'reset', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'reset', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <% if flash[:notice]%>
-      <div class="alert alert-info alert-dismissible bg-info text-info text-center bg-light border m-0 w-75 mx-auto shadow-sm">
+      <div class="alert alert-success alert-dismissible bg-info text-info text-center bg-light border m-0 w-75 mx-auto shadow-sm">
       <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
       <strong><%= notice.html_safe%></strong>
       </div>
@@ -26,9 +26,9 @@
       </div>
       </div>
     <%end%>
-
     <header>
       <nav class="nav-custom">
+        <h1>887887</h1>
       </nav>
     </header>
     
