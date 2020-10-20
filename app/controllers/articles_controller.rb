@@ -2,6 +2,8 @@ class ArticlesController < ApplicationController
   before_action :logged_in?
 
   def index
+    @article = Article.find_by(id: 11)
+    # @article = Article.last
   end
 
   def new
