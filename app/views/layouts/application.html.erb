@@ -13,13 +13,13 @@
 
   <body>
     <% if flash[:notice]%>
-      <div class="alert alert-success alert-dismissible bg-info text-info text-center bg-light border m-0 w-75 mx-auto shadow-sm">
+      <div class="alert alert-info alert-dismissible bg-info text-info text-center bg-light border m-0 w-75 mx-auto shadow-sm alert-custom">
       <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
       <strong><%= notice.html_safe%></strong>
       </div>
     <%end%>
     <% if flash[:alert]%>
-      <div class="alert alert-danger alert-dismissible text-center text-danger bg-light border m-0 w-75 mx-auto shadow-sm">
+      <div class="alert alert-danger alert-dismissible text-center text-danger bg-light border m-0 w-75 mx-auto shadow-sm alert-custom">
       <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
       <strong class="h5"><%= alert.html_safe%></strong>
       <div>
@@ -28,24 +28,31 @@
       </div>
     <%end%>
     <header>
-      <nav class="nav-custom w-100 fixed-top d-flex justify-content-between border-bottom">
-        <div class="pl-3">
+      <nav class="nav-custom w-100 fixed-top d-flex justify-content-between">
+        <div class="pl-3 d-md-none">
           <label for="toggle" class="toggle-label mt-4"></label>
         </div>
         <input id="toggle" class="toggle-checkbox" type="checkbox" name="toggle">
-        <div class="d-flex flex-column flex-md-row nav__links theme-bg-2">
-          <a href="#">Home</a>
-          <a href="#">History</a>
-          <a href="#">Geography</a>
-          <a href="#">Politics</a>
-          <a href="#">Sports</a>
-          <a href="#">Ohters</a>
+        <%= link_to articles_path, class: 'd-flex align-items-center logo__container mb-1' do%>
+          <h4 class="theme-color-2 h3 align-self-end mb-0">ET<ins class="text-white text-decoration-none">on</ins>Rails</h4>
+        <%end%>
+        <div class="d-flex flex-column flex-md-row h-100 align-self-center justify-content-center align-items-center text-size-sm font-weight-bolder ml-md-2 nav__links">
+          <div class="mx-auto theme-color-lg theme-color-sm">
+            <%= link_to 'Home', articles_path, class: 'mr-3 text-uppercase'%>
+            <%= link_to 'History', articles_path, class: 'mr-3 text-uppercase'%>
+            <%= link_to 'Geography', articles_path, class: 'mr-3 text-uppercase'%>
+            <%= link_to 'Politics', articles_path, class: 'mr-3 text-uppercase'%>
+            <%= link_to 'Sports', articles_path, class: 'mr-3 text-uppercase'%>
+            <%= link_to 'Others', articles_path, class: 'mr-3 text-uppercase'%>  
+          </div>
+          <div class="ml-auto d-flex justify-content-center align-items-center theme-color-lg theme-color-sm access__btns">
+            <%= link_to 'Login', articles_path, class: 'text-uppercase border-dark pr-2'%>
+            <ins>|</ins>
+            <%= link_to 'Register', articles_path, class: 'ml-1 text-uppercase'%>  
+          </div>
         </div>
-        <div class="d-flex align-items-center">
-          <h3>EThioPIA</h3>
-          <!-- <%= image_tag "logo2.png", class:'img-fluid logo'%> -->
-        </div>
-        <div class="d-flex flex-column justify-content-center align-items-center pr-3">
+
+        <div class="d-flex justify-content-center align-items-center h6 text-size-sm mx-2">
           <i class="fa fa-2x fa-search theme-color-1"></i>
         </div>
       </nav>
@@ -53,7 +60,7 @@
     
     <main class="container mt-5 pt-1">
       <%= yield %>
-      <h1> lshdfklsjdkljfj l</h1>
+      <h1> 123lshdfklsjdkljfj l</h1>
       <h1> lshdfklsjdkljfj l</h1>
       <h1> lshdfklsjdkljfj l</h1>
       <h1> lshdfklsjdkljfj l</h1>
