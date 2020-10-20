@@ -33,39 +33,50 @@
   background-color: #fff;
 }
 
-.navbar-collapse {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background-color: rebeccapurple;
-  border: 4px dashed red;
-  height: 100px;
-  transition: unset;
-  transition: 1s linear;
-  animation: unset;
-}
-
-.toggle-button,
-.toggle-button::before,
-.toggle-button::after {
-  width: 50px;
+.toggle-label,
+.toggle-label::before,
+.toggle-label::after {
+  width: 40px;
   border-top: 0.45rem solid #847F7B;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
-.toggle-button {
+.toggle-label {
   position: relative;
 }
 
-.toggle-button::before,
-.toggle-button::after {
+.toggle-label::before,
+.toggle-label::after {
   position: absolute;
   top: -20px;
   content: " ";
 }
 
-.toggle-button::after {
+.toggle-label::after {
   top: 6px;
+}
+
+.toggle-checkbox:checked~ .nav__links {
+  transform: scale(1,1);
+}
+
+.toggle-checkbox {
+  display: none;
+}
+
+.nav__links {
+  position: fixed;
+  top: 9%;
+  left: 0;
+  width: 50vw;
+  height: 95vh;
+  transform: scale(0,1);
+  transform-origin: left center;
+  transition:transform 0.3s linear;
+}
+
+.logo {
+  height: 60px;
 }
 
 // main container

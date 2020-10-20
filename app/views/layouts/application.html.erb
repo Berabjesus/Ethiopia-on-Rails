@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'reset', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <body>
@@ -28,11 +29,21 @@
     <%end%>
     <header>
       <nav class="nav-custom w-100 fixed-top custom-border d-flex justify-content-between">
-        <div class="pl-3 border">
-          <label class="toggle-button mt-4"></label>
+        <div class="pl-3">
+          <label for="toggle" class="toggle-label mt-4"></label>
         </div>
-        <div class="border">
-          <h2>Ethiopia on rails</h2>
+        <input id="toggle" class="toggle-checkbox" type="checkbox" name="toggle">
+        <div class="d-flex flex-column flex-md-row nav__links bg-dark">
+          <a class="nav__links--el nav__links--el-1" href="#">Home</a>
+          <a class="nav__links--el nav__links--el-2" href="#">Services</a>
+          <a class="nav__links--el nav__links--el-3" href="#">Contacts</a>
+          <a class="nav__links--el nav__links--el-4" href="#">About Us</a>
+        </div>
+        <div class="custom-border bb">
+          <%= image_tag "logo2.png", class:'img-fluid logo'%>
+        </div>
+        <div class="d-flex flex-column justify-content-center align-items-center pr-3">
+          <i class="fa fa-2x fa-search"></i>
         </div>
       </nav>
     </header>
