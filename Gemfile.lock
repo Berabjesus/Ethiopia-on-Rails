@@ -144,6 +144,7 @@ GEM
     omniauth-oauth2 (1.7.0)
       oauth2 (~> 1.4)
       omniauth (~> 1.9)
+    open_uri_redirections (0.2.1)
     parallel (1.19.2)
     parser (2.7.2.0)
       ast (~> 2.4.1)
@@ -291,6 +292,7 @@ DEPENDENCIES
   omniauth (~> 1.9, >= 1.9.1)
   omniauth-github (~> 1.4)
   omniauth-google-oauth2 (~> 0.8.0)
+  open_uri_redirections
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.4)

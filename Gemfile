@@ -22,6 +22,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1', '>= 3.1.16'
 
+# fetch url data
+gem 'open_uri_redirections'
+
 # Devise authentication
 # gem 'devise', '~> 4.7', '>= 4.7.3'
 

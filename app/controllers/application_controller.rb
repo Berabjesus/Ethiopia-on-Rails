@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user
+  require 'open-uri'
+
+  helper_method :current_user, :weather_info
 
   def current_user
     User.find_by(id: session[session_name]) unless session[session_name].nil?
@@ -23,5 +25,10 @@ class ApplicationController < ActionController::Base
 
   def custom_errors(user_errors)
     user_errors.full_messages.join(', ').gsub(",", "<br>")
+  end
+
+  def weather_info
+    api_key = Rails.application.credentials.weatherapi[:weatherapi_id]
+    @json = JSON.load(open("http://api.weatherapi.com/v1/current.json?key=#{api_key}&q=addis ababa"))
   end
 end
