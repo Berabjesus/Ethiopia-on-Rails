@@ -37,13 +37,8 @@
           <h4 class="theme-color-2 h3 align-self-end mb-0">ET<ins class="text-dark text-decoration-none">on</ins>Rails</h4>
         <%end%>
         <div class="d-flex flex-column flex-md-row h-100 align-self-center justify-content-center align-items-center text-size-sm font-weight-bolder ml-md-2 nav__links">
-          <div class="mx-auto theme-color-lg theme-color-sm">
-            <%= link_to 'Home', articles_path, class: 'mr-3 text-uppercase'%>
-            <%= link_to 'History', articles_path, class: 'mr-3 text-uppercase'%>
-            <%= link_to 'Geography', articles_path, class: 'mr-3 text-uppercase'%>
-            <%= link_to 'Politics', articles_path, class: 'mr-3 text-uppercase'%>
-            <%= link_to 'Sports', articles_path, class: 'mr-3 text-uppercase'%>
-            <%= link_to 'Others', articles_path, class: 'mr-3 text-uppercase'%>  
+          <div class="mx-auto theme-color-lg theme-color-sm d-flex flex-wrap">
+            <%= navigation_buttons%>
           </div>
           <div class="ml-auto d-flex justify-content-center align-items-center theme-color-lg theme-color-sm access__btns">
             <%=access_buttons%>
