@@ -14,6 +14,8 @@
           <div class="img-description d-flex flex-column align-items-start">
             <p class="text-danger h4">Image title</p>
             <p class="text-white h4">Image description</p>
+            <h3><%=@article.votes.count %></h3>
+            <h3><%=@article.categories.first.name%></h3>
           </div>
         </div>
         <div class="carousel-item text-center row-1-height-md">
