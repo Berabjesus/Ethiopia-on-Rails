@@ -8,12 +8,14 @@ class SessionsController < ApplicationController
       create_session @user.id
       goto_to_articles_path @user.name
     else
-      render 'new'
+      @author = "dfsdfsdfsdf"
+      render partial: '/sessions/login', locals: {post_author: @author}
     end
   end
 
   def destroy
-    
+    session.delete(:ethiopia_on_rails_session)
+    redirect_to articles_path, notice: 'Your Logged out.'
   end
 
   def oauth

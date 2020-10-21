@@ -5,10 +5,13 @@ class ApplicationController < ActionController::Base
 
   def current_user
     User.find_by(id: session[session_name]) unless session[session_name].nil?
-  end 
+  end
+
+  def access_control
+    redirect_to articles_path, alert: 'You are not logged in' unless session_exists? && current_user
+  end
 
   def logged_in?
-    # redirect_to new_user_path, alert: 'You are not logged in' unless 
     session_exists? && current_user ? true : false
   end
 

@@ -1,32 +1,39 @@
-<div class="alert bg-light side__bar">
+<div class="alert bg-light shadow-lg side__bar">
 <button type="button" class="close" data-dismiss="alert">&times;</button>
 
-<div class="border col-12 mt-4 w-100 bg-theme text-dark">
-  <div class="border-bottom text-center">
-    <h1>Login</h1>
-  </div>
-  <%= form_tag '/sessions', class: 'form-horizontal' do %>
-  <div class="form-group">
-    <%= label_tag :name, "User Name"%>
-    <%= text_field_tag :name,"", placeholder: 'Your User Name here', class: 'form-control'%>
-  </div>
-  <div class="form-group">
-    <%= label_tag :password%>
-    <%= password_field_tag :password,"",placeholder: 'Your password here', class: 'form-control'%>
-  </div>
-  <div class="form-group w-100 text-center">
-    <%= submit_tag "Login", class: 'btn btn-info'%>
-  </div>
-  <%end%>
+  <div class="border col-12 mt-4 w-100 bg-theme text-dark">
+    <div class="border-bottom pb-2 text-center">
+      <h1>Login</h1>
+      <%= post_author if defined?post_author%>
+    </div>
+    <%= form_with url: sessions_path , class: 'form-horizontal' do %>
+      <div class="form-group">
+        <%= label_tag :name, "User Name"%>
+        <%= text_field_tag :name,"", placeholder: 'Your User Name here', class: 'form-control'%>
+      </div>
+      <div class="form-group">
+        <%= label_tag :password%>
+        <%= password_field_tag :password,"",placeholder: 'Your password here', class: 'form-control'%>
+      </div>
+      <div class="form-group w-100 text-center">
+        <%= submit_tag "Login", class: 'btn btn-info'%>
+      </div>
+    <%end%>
 
-  <div class="mt-4 d-flex justify-content-center">
-    <p class="mb-2">Not Signed up?</p>
-    <%= link_to 'Sign Up', new_user_path, class: 'btn-link ml-2'%>
+    <div class="mt-4 d-flex justify-content-center">
+      <p class="mb-2">Not Signed up?</p>
+      <%= link_to 'Sign Up', new_user_path, class: 'btn-link ml-2'%>
+    </div>
   </div>
-</div>
 
-<div class="border mt-3">
-  <%= button_to "Log in with Google", '/auth/google_oauth2'  %>
-  <%= button_to "Log in with Github", '/auth/github'  %>
-</div>
+  <div class="border mt-3 py-2 d-flex flex-column align-items-center">
+    <div class="d-flex mb-2">
+      <i class="fa fa-3x fa-google mr-2 text-primary"></i>
+      <%= button_to "Log in with Google", '/auth/google_oauth2', {class: 'btn btn-primary btn-lg'} %>
+    </div>
+    <div class="d-flex">
+      <i class="fa fa-3x fa-github mr-2"></i>
+      <%= button_to "Log in with Github", '/auth/github', {class: 'btn btn-dark btn-lg'}%>
+    </div>
+  </div>
 </div>

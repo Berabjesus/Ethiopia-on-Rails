@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :logged_in?
+  before_action :access_control, only: %i[new show create]
 
   def index
     @article = Article.find_by(id: 11)

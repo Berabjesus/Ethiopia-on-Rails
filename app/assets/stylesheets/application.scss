@@ -66,8 +66,8 @@
   position: fixed;
   top: 0;
   left: 10vw;
-  animation:alert-animation 1s 1;
-  -webkit-animation:alert-animation 1s 1;
+  animation:alert-animation 3s 1;
+  -webkit-animation:alert-animation 3s 1;
   animation-fill-mode: forwards;
 
   animation-delay:2s;
@@ -84,7 +84,7 @@
 }
 
 .alert-custom {
-  z-index: 1030;
+  z-index: 13030;
 }
 
 /*** 3.0 - Header ***/
