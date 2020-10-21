@@ -84,7 +84,7 @@
 }
 
 .alert-custom {
-  z-index: 9999;
+  z-index: 1030;
 }
 
 /*** 3.0 - Header ***/
@@ -179,4 +179,8 @@
 /*** 5.0 Main ***/
 .main {
   height: 90vh;
+}
+
+.modal-backdrop {
+  z-index: 0;
 }
