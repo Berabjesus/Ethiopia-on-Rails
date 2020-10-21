@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
   def index
     @article = Article.find_by(id: 11)
     # @article = Article.last
+    # create_session 7
   end
 
   def new

@@ -12,4 +12,10 @@ module ApplicationHelper
     end
     link
   end
+
+  def sidebar_login
+    unless logged_in?
+      render '/sessions/login'
+    end
+  end
 end
