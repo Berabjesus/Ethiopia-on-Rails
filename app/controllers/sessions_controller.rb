@@ -8,8 +8,7 @@ class SessionsController < ApplicationController
       create_session @user.id
       goto_to_articles_path @user.name
     else
-      @author = "dfsdfsdfsdf"
-      render partial: '/sessions/login', locals: {post_author: @author}
+      render partial: '/sessions/login'
     end
   end
 

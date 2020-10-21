@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       errors = '<div class= "border-bottom pb-3">Sign up Error</div>'
       errors << custom_errors(@user.errors)
       respond_to do |format|
-        format.html { redirect_to new_user_path, alert: errors.html_safe }
+        format.html { redirect_to articles_path, alert: errors.html_safe }
       end    
     end
   end
