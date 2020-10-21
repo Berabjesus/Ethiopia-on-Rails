@@ -42,10 +42,24 @@
     </div>
   </div>
   <div class="col-12 col-md-2 weather_container">
-    
   </div>
 </div>
+<div class="row">
+  <div class="history__container col-6 col-md-3 px-0 custom-border">
+    <%= image_tag(@article.image.url, class: 'img-fluid') if @article.image? %>
+  </div>
+  <div class="geography__container col-6 col-md-3 px-0 custom-border">
+    <%= image_tag(@article.image.url, class: 'img-fluid') if @article.image? %>
 
-<%= weather_info%>
+  </div>
+  <div class="politics__container col-6 col-md-3 px-0 custom-border">
+    <%= image_tag(@article.image.url, class: 'img-fluid') if @article.image? %>
+
+  </div>
+  <div class="sport__container col-6 col-md-3 px-0 custom-border">
+    <%= image_tag(@article.image.url, class: 'img-fluid') if @article.image? %>
+
+  </div>
+</div>
 
 <%= link_to 'New Article', new_article_path%>
