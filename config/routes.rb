@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'categories/show'
   # get 'articles/index'
   # get 'articles/new'
   # get 'articles/show'
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
   resources :sessions, only: %i[new create destroy]
   resources :articles
   resources :users
+  resources :categories, only: [:show]
 
   
   # get 'auth/google_oauth2/callback', to 'sessions#oauth'

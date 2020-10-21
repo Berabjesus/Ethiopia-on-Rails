@@ -1,14 +1,15 @@
 class ApplicationController < ActionController::Base
   require 'open-uri'
 
-  helper_method :current_user, :weather_info
+  helper_method :current_user, :logged_in?, :weather_info
 
   def current_user
     User.find_by(id: session[session_name]) unless session[session_name].nil?
   end 
 
   def logged_in?
-    redirect_to new_user_path, alert: 'You are not logged in' unless session_exists? 
+    # redirect_to new_user_path, alert: 'You are not logged in' unless 
+    session_exists? && current_user ? true : false
   end
 
   def session_exists?
