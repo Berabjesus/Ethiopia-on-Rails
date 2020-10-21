@@ -19,8 +19,8 @@
 :root {
   --theme-color-1: #847F7B;
   --theme-color-2: #4e443e;
+  --theme-color-3: #f76208;
   --white: #fff;
-  --hover-color: #f76208;
 }
 
   /** 1.2 color classes **/
@@ -31,6 +31,10 @@
 
 .theme-bg-2 {
   background-color: var(--theme-color-2);
+}
+
+.theme-bg-3 {
+  background-color: var(--theme-color-3);
 }
 
 .theme-color-1 {
@@ -52,8 +56,8 @@
   border: 3px dashed red;
 }
 
-.border-thick-right {
-  border-right: 4px solid var(--theme-color-2);
+.form-border {
+  border: 5px solid var(--theme-color-1);
 }
 
   /** 1.3 text sizes **/
@@ -140,13 +144,13 @@
 }
 
 .nav__links a:hover {
-  color: var(--hover-color);
+  color: var(--theme-color-3);
 }
 
 .logo__container {
   background-image: url("/assets/logo.png");
   background-size: cover;
-  // background-position: 12px 10px;
+  background-position: 17px 1px;
   background-repeat: no-repeat;
 }
 

@@ -27,8 +27,8 @@ class ApplicationController < ActionController::Base
     return :ethiopia_on_rails_session
   end
 
-  def custom_errors(user_errors)
-    user_errors.full_messages.join(', ').gsub(",", "<br>")
+  def custom_errors(errors)
+    errors.full_messages.join(', ').gsub(",", "<br>")
   end
 
   def weather_info

@@ -7,7 +7,7 @@ module ApplicationHelper
       link << capture {link_to 'Sports', articles_path, class: 'text-uppercase border-dark pr-3'}
       link << capture {link_to 'Others', articles_path, class: 'text-uppercase border-dark pr-3'}
       link << content_tag(:ins, "|") if logged_in?
-      link << capture {link_to 'Create new article', articles_path, class: 'text-uppercase border-dark pl-2'} if logged_in?
+      link << capture {link_to 'Create new article', new_article_path, class: 'text-uppercase border-dark pl-2'} if logged_in?
       link
   end
 

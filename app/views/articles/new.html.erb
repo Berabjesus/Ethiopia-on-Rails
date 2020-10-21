@@ -1,16 +1,27 @@
-<%= form_for @article, html: {class: 'form-horizontal p-4 bg-theme text-white'} do |f|%>
-  <div class = 'form-group'>
-    <%= f.label :title%>
-    <%= f.text_field :title, placeholder: "article Title", class: 'form-control'%>
+<div class="row col-12 col-md-8 mx-auto shadow-sm mt-5 form-border">
+  <div class="px-2 py-1 mt-1 text-center">
+    <% @article.errors.full_messages.each do |error| %>
+        <li class="text-danger list-unstyled h5 border-bottom pb-2"><%= error %></li>
+    <% end %>
   </div>
 
-  <div class = 'form-group'>
-    <%= f.label :text%>
-    <%= f.text_area :text, placeholder: "article Description",  class: 'form-control',  cols: "100", rows: "10"%>
-  </div>
-  <div>
-    <%= f.label :image%>
-    <%= f.file_field :image %>  
-  </div>
-  <%= f.submit 'Create article', class: 'btn btn-success'%>
-<%end%>
+  <%= form_for @article, html: {class: 'form-horizontal p-4 bg-theme text-white'} do |f|%>
+    <div class = 'form-group'>
+      <%= f.label :title%>
+      <%= f.text_field :title, placeholder: "article Title", class: 'form-control'%>
+    </div>
+
+    <div class = 'form-group'>
+      <%= f.label :text%>
+      <%= f.text_area :text, placeholder: "article Description",  class: 'form-control',  cols: "100", rows: "10"%>
+    </div>
+    <div class="mb-3 text-dark">
+      <%= f.label :image%>
+      <%= f.file_field :image %>  
+    </div>
+
+    <div class="form-group">
+      <%= f.select(:category, @categories.all.collect { |c| [ c.name, c.id ] }, {include_blank: "Select Category"}, { :class => 'form-control' }) %>
+      <%= f.submit 'Create article', class: 'btn btn-success mt-3 theme-bg-2'%>
+  <%end%>
+</div>

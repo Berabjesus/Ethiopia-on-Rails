@@ -9,18 +9,18 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
+    @categories = Category.all
   end
 
   def show
   end
 
   def create
-    # @article = Article.new(article_params)
-    # @article.AuthorId = current_user.id
     @article = current_user.articles.build(article_params)
     if @article.valid? && @article.save
+      Tag.create(article_id: @article.id, category_id: params[:article][:category])
       redirect_to articles_path, notice: 'article Created Successfully'
-    else
+    else 
       render 'new'
     end
   end

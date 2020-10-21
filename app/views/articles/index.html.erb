@@ -1,5 +1,6 @@
+<%= sidebar_login%>
 <div class="row">
-  <div class="carousel__container col-12 col-md-10 px-0 bg-dark">
+  <div class="carousel__container col-12 col-md-9 px-0 bg-dark">
     <div id="top_articles" class="carousel slide row-1-height-sm" data-ride="carousel">
       <ol class="carousel-indicators bg-transparent">
         <li data-target="#top_articles" data-slide-to="0" class="active"></li>
@@ -9,24 +10,24 @@
       <div class="carousel-inner">
         <div class="carousel-item active text-center row-1-height-md">
           <%= link_to articles_path do%>
-            <%= image_tag(@article.image.url, class: 'img-fluid') if @article.image? %>
+            <%= image_tag(@article.image.url, class: 'img-fluid w-100') if @article.image? %>
           <%end%>
           <div class="img-description d-flex flex-column align-items-start">
             <p class="text-danger h4">Image title</p>
             <p class="text-white h4">Image description</p>
             <h3><%=@article.votes.count %></h3>
-            <h3><%=@article.categories.first.name%></h3>
+            <h3><%=@article.category.name if !@article.category.nil?%></h3>
           </div>
         </div>
         <div class="carousel-item text-center row-1-height-md">
-          <%= image_tag(@article.image.url, class: 'img-fluid') if @article.image? %>
+          <%= image_tag(@article.image.url, class: 'img-fluid w-100') if @article.image? %>
           <div class="img-description d-flex flex-column align-items-start">
             <p class="text-danger h4">Image title</p>
             <p class="text-white h4">Image description</p>
           </div>
         </div>
         <div class="carousel-item text-center row-1-height-md">
-          <%= image_tag(@article.image.url, class: 'img-fluid') if @article.image? %>
+          <%= image_tag(@article.image.url, class: 'img-fluid w-100') if @article.image? %>
           <div class="img-description d-flex flex-column align-items-start">
             <p class="text-danger h4">Image title</p>
             <p class="text-white h4">Image description</p>
@@ -43,7 +44,7 @@
       </a>
     </div>
   </div>
-  <div class="col-12 col-md-2 weather_container">
+  <div class="col-12 col-md-3 weather_container">
   </div>
 </div>
 <div class="row">
@@ -65,7 +66,5 @@
 </div>
 
 
-<%= sidebar_login%>
 
 
-<%= link_to 'New Article', new_article_path%>
