@@ -4,7 +4,7 @@
       <div class="col-12 col-sm-6 px-0 h-100 w-100">
         <%= image_for_categories article %>
       </div>
-      <div class="col-12 col-sm-6 d-flex flex-column text-break">
+      <div class="col-12 col-sm-6 d-flex justify-content-around flex-column text-break">
         <div class="mt-2 d-flex ">
           <h2 class="pb-2 h4  d-inline-block theme-color-text underline"><%= @category.name %></h2>
         </div>
@@ -13,6 +13,9 @@
         </div>
         <div>
           <p class="h5"><%= article.text%></p>
+        </div>
+        <div class="align-self-start d-flex justify-content-start">
+          <%= vote_button article%>
         </div>
       </div>
     </div>

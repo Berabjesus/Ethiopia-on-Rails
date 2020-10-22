@@ -39,4 +39,12 @@ module ApplicationHelper
       image_tag('none.png', class: 'w-100 h-100')
     end
   end
+
+  def vote_button article
+    if article.votes.ids.any?(current_user.id)
+      link_to 'Remove Vote', article_votes_path(article), class: 'btn btn-danger'
+    else
+      link_to 'Vote', article_votes_path(article), class: 'btn btn-light border'
+    end
+  end
 end

@@ -208,3 +208,16 @@
 .modal-backdrop {
   z-index: 0;
 }
+
+.img-gradient{
+  position:relative;
+  display:inline-block;
+}
+.img-gradient:after {
+  content:'';
+  position:absolute;
+  left:0; top:0;
+  width:100%; height:100%;
+  display:inline-block;
+  background: linear-gradient(to bottom, rgba(70, 75, 0, 0.295) 0%,rgba(6, 32, 71, 0.301) 100%);
+}

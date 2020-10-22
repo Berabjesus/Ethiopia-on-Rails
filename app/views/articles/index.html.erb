@@ -8,7 +8,7 @@
         <li data-target="#top_articles" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner">
-        <div class="carousel-item active text-center row-1-height-md">
+        <div class="carousel-item active text-center row-1-height-md img-gradient">
           <%= link_to articles_path do%>
             <%= image_tag(@article.image.url, class: 'img-fluid w-100') if @article.image? %>
           <%end%>
@@ -44,11 +44,11 @@
       </a>
     </div>
   </div>
-  <div class="col-12 col-md-3 weather_container">
+  <div class="col-12 col-md-3 weather_container bggrad">
   </div>
 </div>
 <div class="row">
-  <div class="history__container col-6 col-md-3 px-0">
+  <div class="history__container col-6 col-md-3 px-0 img-gradient">
     <%= image_tag(@article.image.url, class: 'img-fluid') if @article.image? %>
   </div>
   <div class="geography__container col-6 col-md-3 px-0">
