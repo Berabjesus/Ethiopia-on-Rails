@@ -87,8 +87,8 @@
   position: fixed;
   top: 0;
   left: 10vw;
-  animation:alert-animation 2s 1;
-  -webkit-animation:alert-animation 3s 1;
+  animation:alert-animation 0.3s 1;
+  -webkit-animation:alert-animation 0.3s 1;
   animation-fill-mode: forwards;
 
   animation-delay:3s;
@@ -99,8 +99,6 @@
 
 @-webkit-keyframes alert-animation{
   0%   {opacity: 1;}
-  70%  {opacity: 0.5;}
-  90% {opacity: 0.3;-webkit-transform: translateY(0px);}
   100% {opacity: 0;-webkit-transform: translateY(-30px); visibility: hidden;}
 }
 
