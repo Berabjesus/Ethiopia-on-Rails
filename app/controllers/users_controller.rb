@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.valid? && @user.save
       create_session @user.id
-      redirect_to articles_path, notice: 'Sign up successful'
+      redirect_to articles_path, notice: "Hi #{@user.name}, you have signed up successfully!"
     else
       errors = '<div class= "border-bottom pb-3">Sign up Error</div>'
       errors << custom_errors(@user.errors)

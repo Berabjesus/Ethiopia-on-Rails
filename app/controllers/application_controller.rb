@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :logged_in?, :weather_info
 
+  private 
+  
   def current_user
     User.find_by(id: session[session_name]) unless session[session_name].nil?
   end

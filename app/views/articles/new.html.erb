@@ -20,6 +20,15 @@
       <%= f.file_field :image %>  
     </div>
 
+    <div class="d-flex text-dark">
+        <% @categories.each do |category| %>
+        <div class="form-group pr-4">
+          <%= label_tag "#{category.name}" %>
+          <%= check_box_tag "category[]", category.id %>
+        </div>
+        <% end %>
+    </div>
+
     <div class="form-group">
       <%= f.submit 'Create article', class: 'btn btn-success mt-3 theme-bg-2'%>
     </div>

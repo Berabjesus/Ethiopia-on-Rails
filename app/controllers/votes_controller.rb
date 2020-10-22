@@ -16,6 +16,6 @@ class VotesController < ApplicationController
   end
 
   def top_voted_article
-    
+    article = Vote.includes(:articles)
   end
 end

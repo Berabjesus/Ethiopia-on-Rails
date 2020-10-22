@@ -38,6 +38,8 @@ gem 'omniauth-google-oauth2', '~> 0.8.0'
 # Image uploader
 gem 'carrierwave', '~> 2.1'
 
+gem 'bullet', group: 'development'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

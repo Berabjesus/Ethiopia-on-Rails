@@ -111,6 +111,7 @@
 /*** 3.0 - Header ***/
 
 .nav-custom {
+  z-index: 5000;
   min-height: 60px;
   background-color: #fff;
   border-bottom: 5px solid var(--theme-color-1);
