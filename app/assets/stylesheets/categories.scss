@@ -1,3 +1,9 @@
-// Place all the styles related to the categories controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.category__container {
+  min-height: 82vh !important;
+  background-image: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.836), rgba(233, 216, 216, 0.548) 3px, #f1e8e850 5px);
+}
+
+.text-break {
+  white-space: pre-wrap;
+}
+

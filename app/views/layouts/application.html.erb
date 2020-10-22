@@ -70,9 +70,26 @@
         </div>
       </nav>
     </header>
-    
     <main class="container-fluid main mt-5 pt-1 px-0">
       <%= yield %>
     </main>
+    <footer class="theme-bg-2 row d-flex justify-content-between align-items-center p-3 footer">
+      <div class="text-white">
+        <%= link_to articles_path, class: 'd-flex align-items-center mb-1' do%>
+          <h4 class=" h3 align-self-end mb-0">ET<ins class="text-white text-decoration-none">on</ins>Rails</h4>
+        <%end%>
+      </div>
+      <div class="d-flex">
+        <a class="theme-color-3" href="#">Privacy Policy</a>
+        <a class="theme-color-3" href="#">Terms & conditions</a>
+        <p class="ml-3 text-white">Copyright 2020. All right reserved</p>
+      </div>
+      <div class="d-flex align-items-center">
+        <p class="text-white mr-3">Connect with us</p>
+        <i class="fa fa-2x fa-twitter theme-color-3"></i>
+        <i class="fa fa-2x fa-instagram ml-3 theme-color-3"></i>
+        <i class="fa fa-2x fa-facebook ml-3 theme-color-3"></i>
+      </div>
+    </footer>
   </body>
 </html>

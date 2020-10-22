@@ -4,6 +4,7 @@
 *  1.0 - Global values
 *  2.0 - row 1
 *  3.0 - sidebars
+*  4.0 - categories
 */
 
 /*** 1.0 Global values ***/
@@ -45,4 +46,9 @@
   z-index: 2000;
   right: 1vw;
   height: 85vh;
+}
+
+/*** 4.0 categories ***/
+.category-row {
+  height: 50vh;
 }

@@ -1,14 +1,12 @@
 module ApplicationHelper
   def navigation_buttons
-      link = capture {link_to 'Home', articles_path, class: 'text-uppercase border-dark pr-3'}
-      link << capture {link_to 'History', articles_path, class: 'text-uppercase border-dark pr-3'}
-      link << capture {link_to 'Geography', articles_path, class: 'text-uppercase border-dark pr-3'}
-      link << capture {link_to 'Politics', articles_path, class: 'text-uppercase border-dark pr-3'}
-      link << capture {link_to 'Sports', articles_path, class: 'text-uppercase border-dark pr-3'}
-      link << capture {link_to 'Others', articles_path, class: 'text-uppercase border-dark pr-3'}
-      link << content_tag(:ins, "|") if logged_in?
-      link << capture {link_to 'Create new article', new_article_path, class: 'text-uppercase border-dark pl-2'} if logged_in?
-      link
+    link = capture {link_to 'Home', articles_path, class: 'text-uppercase border-dark pr-3'}
+    Category.all.each do |category|
+      link << capture {link_to "#{category.name}", category_path(category), class: 'text-uppercase border-dark pr-3'}
+    end
+    link << content_tag(:ins, "|") if logged_in?
+    link << capture {link_to 'Create new article', new_article_path, class: 'text-uppercase border-dark pl-2'} if logged_in?
+    link
   end
 
   def access_buttons
@@ -31,6 +29,14 @@ module ApplicationHelper
       else
         render '/sessions/login'
       end
+    end
+  end
+
+  def image_for_categories object
+    if object.image?
+      image_tag(object.image.url, class: 'img-fluid w-100 h-100') 
+    else
+      image_tag('none.png', class: 'w-100 h-100')
     end
   end
 end

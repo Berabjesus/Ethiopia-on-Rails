@@ -2,8 +2,8 @@ class ArticlesController < ApplicationController
   before_action :access_control, only: %i[new show create]
 
   def index
-    @article = Article.find_by(id: 11)
-    # @article = Article.last
+    # @article = Article.find_by(id: 11)
+    @article = Article.last
     # create_session 7
   end
 

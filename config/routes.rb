@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'categories/show'
+  # get 'categories/show'
   # get 'articles/index'
   # get 'articles/new'
   # get 'articles/show'

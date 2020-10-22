@@ -1,7 +1,7 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'users';
 @import 'articles';
-
+@import 'categories';
 /* 
 *  CSS TABLE OF CONTENTS
 *   
@@ -20,6 +20,7 @@
   --theme-color-1: #847F7B;
   --theme-color-2: #4e443e;
   --theme-color-3: #f76208;
+  --theme-color-text: #f9ae35;
   --white: #fff;
 }
 
@@ -45,6 +46,16 @@
   color: var(--theme-color-2);
 }
 
+
+.theme-color-3 {
+  color: var(--theme-color-3);
+}
+
+.theme-color-text {
+  color: var(--theme-color-text);
+}
+
+
 .theme-color-sm {
   color: var(--white);
 }
@@ -58,6 +69,10 @@
 
 .form-border {
   border: 5px solid var(--theme-color-1);
+}
+
+.underline {
+  border-bottom: 5px solid var(--theme-color-text);
 }
 
   /** 1.3 text sizes **/
@@ -187,10 +202,9 @@
 
 /*** 5.0 Main ***/
 .main {
-  height: 90vh;
+  min-height: 82vh;
 }
 
 .modal-backdrop {
   z-index: 0;
 }
-
