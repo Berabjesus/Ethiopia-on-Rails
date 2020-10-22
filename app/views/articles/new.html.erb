@@ -21,7 +21,6 @@
     </div>
 
     <div class="form-group">
-      <%= f.select(:category, @categories.all.collect { |c| [ c.name, c.id ] }, {include_blank: "Select Category"}, { :class => 'form-control' }) %>
       <%= f.submit 'Create article', class: 'btn btn-success mt-3 theme-bg-2'%>
     </div>
   <%end%>

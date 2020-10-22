@@ -14,4 +14,8 @@ class VotesController < ApplicationController
       redirect_to category_path(vote.article.category.id)
     end
   end
+
+  def top_voted_article
+    
+  end
 end
