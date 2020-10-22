@@ -32,11 +32,11 @@ module ApplicationHelper
     end
   end
 
-  def image_for_categories object
-    if object.image?
-      image_tag(object.image.url, class: 'img-fluid w-100 h-100') 
+  def image_render article
+    if article.image?
+      image_tag(article.image.url, class: 'img-fluid w-100 h-100') 
     else
-      image_tag('none.png', class: 'w-100 h-100')
+      image_tag('none.png', class: 'img-unavilable')
     end
   end
 end

@@ -1,67 +1,27 @@
 <%= sidebar_login%>
 <div class="row">
-  <div class="carousel__container col-12 col-md-9 px-0 bg-dark">
-    <div id="top_articles" class="carousel slide row-1-height-sm" data-ride="carousel">
-      <ol class="carousel-indicators bg-transparent">
-        <li data-target="#top_articles" data-slide-to="0" class="active"></li>
-        <li data-target="#top_articles" data-slide-to="1"></li>
-        <li data-target="#top_articles" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active text-center row-1-height-md img-gradient">
-          <%= link_to articles_path do%>
-            <%= image_tag(@article.image.url, class: 'img-fluid w-100') if @article.image? %>
-          <%end%>
-          <div class="img-description d-flex flex-column align-items-start">
-            <p class="text-danger h4">Image title</p>
-            <p class="text-white h4">Image description</p>
-            <h3><%=@article.votes.count %></h3>
-          </div>
-        </div>
-        <div class="carousel-item text-center row-1-height-md">
-          <%= image_tag(@article.image.url, class: 'img-fluid w-100') if @article.image? %>
-          <div class="img-description d-flex flex-column align-items-start">
-            <p class="text-danger h4">Image title</p>
-            <p class="text-white h4">Image description</p>
-          </div>
-        </div>
-        <div class="carousel-item text-center row-1-height-md">
-          <%= image_tag(@article.image.url, class: 'img-fluid w-100') if @article.image? %>
-          <div class="img-description d-flex flex-column align-items-start">
-            <p class="text-danger h4">Image title</p>
-            <p class="text-white h4">Image description</p>
-          </div>
-        </div>
-      </div>
-      <a class="carousel-control-prev" href="#top_articles" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#top_articles" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+  <div class="col-12 col-md-9 px-0 bg-dark row-1-height-md">
+    <%= link_to articles_path do%>
+      <%= image_render top_voted_article%>
+    <%end%>
+    <div class="img-description px-3 pb-2">
+      <h4 class="h4 theme-color-text pb-3 font-weight-bolder"><%= top_voted_article.title%></h4>
+      <p class="h6 text-white font-weight-bold"><%= top_voted_article.text%></p>
     </div>
   </div>
-  <div class="col-12 col-md-3 weather_container bggrad">
+  <div class="col-12 col-md-3 weather_container">
   </div>
 </div>
 <div class="row">
-  <div class="history__container col-6 col-md-3 px-0 img-gradient">
-    <%= image_tag(@article.image.url, class: 'img-fluid') if @article.image? %>
-  </div>
-  <div class="geography__container col-6 col-md-3 px-0">
-    <%= image_tag(@article.image.url, class: 'img-fluid') if @article.image? %>
-
-  </div>
-  <div class="politics__container col-6 col-md-3 px-0">
-    <%= image_tag(@article.image.url, class: 'img-fluid') if @article.image? %>
-
-  </div>
-  <div class="sport__container col-6 col-md-3 px-0">
-    <%= image_tag(@article.image.url, class: 'img-fluid') if @article.image? %>
-
-  </div>
+  <%priority_categories.each do |category|%>
+    <div class="position-relative col-6 col-md-3 px-0">
+      <%= image_render top_of_category category%>
+      <div class="category-img-description position-absolute h-100 d-flex flex-column justify-content-between px-1">
+        <h4 class="font-weight-bolder text-white underline pb-3 mt-2"><%= category.name%></h4>
+        <h5 class="mb-4 text-white"><%= (top_of_category category).title%></h5>
+      </div>
+    </div>
+  <%end%>
 </div>
 
 

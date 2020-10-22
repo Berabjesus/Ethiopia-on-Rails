@@ -21,11 +21,11 @@
     </div>
 
     <div class="d-flex text-dark">
-        <% @categories.each do |category| %>
-        <div class="form-group pr-4">
-          <%= label_tag "#{category.name}" %>
-          <%= check_box_tag "category[]", category.id %>
-        </div>
+        <% priority_categories.each do |category| %>
+          <div class="form-group pr-4">
+            <%= label_tag "#{category.name}" %>
+            <%= check_box_tag "category[]", category.id %>
+          </div>
         <% end %>
     </div>
 

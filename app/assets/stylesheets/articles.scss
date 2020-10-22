@@ -11,13 +11,13 @@
 
 /*** 2.0 Row 1 ***/
 
-.carousel-item {
-  position: relative;
-}
-
 .img-description {
   position: absolute;
-  top: 50%;
+  bottom: 0;
+}
+
+.category-img-description {
+  top: 0;
 }
 
 .weather_container {
@@ -26,14 +26,21 @@
   background-size: cover;
 }
 
+
 @media screen and (max-width: 768px) {
-  .row-1-height-sm {
+  .row-1-height-md {
+    position: relative;
     height: 55vw;
   }  
+
+  .img-description {
+    bottom: 100px;
+  }
 }
 
 @media screen and (min-width: 768px) {
   .row-1-height-md {
+    position: relative;
     max-height: 28vw !important;
   }
 }

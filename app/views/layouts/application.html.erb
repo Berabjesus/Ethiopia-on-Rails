@@ -13,13 +13,13 @@
 
   <body>
     <% if flash[:notice]%>
-      <div class="alert alert-info alert-dismissible bg-info text-info text-center bg-light border w-75 mx-auto shadow-sm alert-custom">
+      <div class="alert alert-info alert-dismissible bg-info text-info text-center bg-light w-75 mx-auto shadow-sm py-5 bg-white alert-custom form-border">
       <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
       <strong><%= notice.html_safe%></strong>
       </div>
     <%end%>
     <% if flash[:alert]%>
-      <div class="alert alert-danger alert-dismissible text-center text-danger bg-light border m-0 w-75 mx-auto shadow-sm alert-custom">
+      <div class="alert alert-info alert-dismissible text-center text-danger bg-light m-0 w-75 mx-auto shadow-sm py-5 bg-white alert-custom form-border">
       <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
       <strong class="h5"><%= alert.html_safe%></strong>
       <div>
