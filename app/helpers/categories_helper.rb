@@ -1,5 +1,7 @@
 module CategoriesHelper
   def vote_button article
+    return if current_user.nil?
+    
     if article.votes.map {|v| v.user_id}.any?(current_user.id)
       link_to 'Remove Vote', article_vote_path(article),method: :delete, class: 'btn btn-danger'
     else
