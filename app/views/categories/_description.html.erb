@@ -5,15 +5,18 @@
   <div class="d-flex align-items-start">
     <h2 class="text-dark font-weight-bolder h3"><%= article.title%></h2>
   </div>
-  <div>
-    <p class="h5"><%= article.text%></p>
+  <div class="overflow-hidden text-wrap d-flex flex-column text-break article-container">
+    <p class="h5 text-break"><%= article.text%></p>
   </div>
-  <div class="align-self-start d-flex justify-content-around w-100">
+  <div class="align-self-start d-flex justify-content-between w-100">
+    <span class="align-self-center">
+      <%= button_tag 'Read More', class: 'btn btn-light border'%>
+    </span>
     <span class="align-self-center">
       <%= vote_button article%>
     </span>
-    <span class="align-self-center">
-      <p class="h4">Has <%= pluralize(article.vote_count, 'vote')%></p>
+    <span class="align-self-end ml-2">
+      <p class="h6">Has <%= pluralize(article.vote_count, 'vote')%></p>
     </span>
   </div>
 </div>
