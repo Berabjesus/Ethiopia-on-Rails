@@ -1,28 +1,7 @@
 <div class="d-flex flex-wrap col-12 px-0 mt-2 category__container">
-  <% @category.articles.includes(:votes).order(vote_count: :desc).each do |article|%>
+  <% @category.articles.includes(:votes).order(vote_count: :desc).each_with_index do |article, index|%>
     <div class="col-12 col-lg-6 row px-0 border border-light category-row overflow-hidden">
-      <div class="col-12 col-sm-6 px-0 h-100 w-100">
-        <%= image_render article %>
-      </div>
-      <div class="col-12 col-sm-6 d-flex justify-content-around flex-column text-break">
-        <div class="mt-2 d-flex ">
-          <h2 class="pb-2 h4  d-inline-block theme-color-text underline"><%= @category.name %></h2>
-        </div>
-        <div class="d-flex align-items-start">
-          <h2 class="text-dark font-weight-bolder h3"><%= article.title%></h2>
-        </div>
-        <div>
-          <p class="h5"><%= article.text%></p>
-        </div>
-        <div class="align-self-start d-flex justify-content-around w-100">
-          <span class="align-self-center">
-            <%= vote_button article%>
-          </span>
-          <span class="align-self-center">
-            <p class="h4">Has <%= pluralize(article.vote_count, 'vote')%></p>
-          </span>
-        </div>
-      </div>
+     <%= category_view_pattern(index, article, @category)%>
     </div>
   <%end%>
 </div>
