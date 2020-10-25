@@ -1,7 +1,7 @@
 <div class="d-flex flex-wrap col-12 px-0 mt-2 category__container">
   <% @category.articles.includes(:votes).order(vote_count: :desc).each_with_index do |article, index|%>
-    <div class="col-12 col-lg-6 row px-0 border border-light category-row overflow-hidden">
-     <%= category_view_pattern(index, article, @category)%>
+    <div class="row col-12 col-lg-6 px-0 category-row ">
+      <%= category_view_pattern(index, article, @category)%>
     </div>
   <%end%>
 </div>

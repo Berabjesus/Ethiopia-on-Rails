@@ -1,6 +1,6 @@
 .category__container {
   position: relative;
-  min-height: 82vh;
+  height: auto;
   background-image: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.178), rgba(233, 216, 216, 0.13) 3px, #f1e8e821 5px);
 }
 
@@ -8,7 +8,24 @@
   white-space: pre-wrap;
 }
 
+.category-row {
+  height: 50vh;
+}
+
 .article-container {
   height: 100px;
 }
 
+.article-content-height {
+  height: 100%;
+}
+
+@media screen and (max-width: 576px) {
+  .article-content-height {
+    height: 50%;
+  }
+
+  .category-row {
+    height: 100vh;
+  }
+}

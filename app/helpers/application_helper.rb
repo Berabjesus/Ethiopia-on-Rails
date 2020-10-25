@@ -36,7 +36,7 @@ module ApplicationHelper
     if article.image?
       image_tag(article.image.url, class: 'img-fluid w-100 h-100') 
     else
-      image_tag('none.png', class: 'img-unavilable border')
+      image_tag('none.png', class: 'h-100 w-100 border')
     end
   end
 end
