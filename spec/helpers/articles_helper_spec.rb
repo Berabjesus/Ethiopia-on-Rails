@@ -1,15 +1,39 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the ArticlesHelper. For example:
-#
-# describe ArticlesHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
-RSpec.describe ArticlesHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe ApplicationHelper, type: :helper do
+  article = Article.new
+  article.AuthorId = 1
+  article.title = "test"
+  article.text = "Article long text for testing the helper method"
+  article.image = nil
+
+  describe "#image_render" do
+    it "has a width 100 css classes" do
+      expect(image_render(article)).to have_css(".w-100")
+    end
+
+    it 'has img tag' do
+      image_render(article).should have_selector("img")
+    end
+  end
+
+  describe "#extract_title" do
+    it "returns title of the article" do
+      expect(extract_title(article)).to eq("test")
+    end
+
+    it "returns no article tile if the passed parameter is no article object" do
+      expect(extract_title("article")).to eq("No article titles found here")
+    end
+  end
+
+  describe "#extract_text" do
+    it "returns title of the article" do
+      expect(extract_text(article)).to eq("Article long text for testing the helper method")
+    end
+
+    it "returns no article text if the passed parameter is no article object" do
+      expect(extract_text("article")).to eq("No article texts found here")
+    end
+  end
 end
