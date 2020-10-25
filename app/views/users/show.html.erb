@@ -1,0 +1,20 @@
+<div class="w-100 border d-flex flex-column flex-lg-row align-items-sm-center justify-content-between px-3 text-white theme-bg-1">
+  <h3>Hi <%=current_user.name%></h3>
+  <h3>You have written <%= pluralize((Article.articles_by_user(current_user)).size, 'article') %></h3>
+</div>
+<div class="w-100 h-100 d-flex flex-wrap justify-content-center">
+  <% Article.articles_by_user(current_user).each do |article|%>
+    <div class="col-5 px-0">
+      <div class="card">
+        <div class="card-img-top img-container custom-border">
+          <%= image_render article %>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><%=article.title%></h5>
+          <p class="card-text"><%= article.text%></p>
+          <%= link_to 'edit', edit_article_path(article), class: 'btn theme-bg-2 text-white mt-3'%>
+        </div>
+      </div>
+    </div>
+  <%end%>
+</div>

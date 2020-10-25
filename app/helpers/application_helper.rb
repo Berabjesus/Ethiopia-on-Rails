@@ -1,7 +1,7 @@
 module ApplicationHelper
   def navigation_buttons
     link = capture {link_to 'Home', articles_path, class: 'text-uppercase border-dark pr-3'}
-    Category.all.each do |category|
+    priority_categories(5).each do |category|
       link << capture {link_to "#{category.name}", category_path(category), class: 'text-uppercase border-dark pr-3'}
     end
     link << content_tag(:ins, "|") if logged_in?
@@ -11,7 +11,7 @@ module ApplicationHelper
 
   def access_buttons
     if logged_in? 
-      link = capture {link_to (image_tag('', class: 'fa fa-user pr-2')), users_path}
+      link = capture {link_to (image_tag('', class: 'fa fa-user pr-2')), user_path(current_user)}
       link << content_tag(:ins, "|")
       link << capture {link_to 'Sign Out', session_path(current_user.id),method: :delete, class: 'text-uppercase border-dark ml-2'}
     else
@@ -34,7 +34,7 @@ module ApplicationHelper
 
   def image_render article
     if article.image?
-      image_tag(article.image.url, class: 'img-fluid w-100 h-100') 
+      image_tag(article.image.url, class: 'w-100 h-100') 
     else
       image_tag('none.png', class: 'h-100 w-100 border')
     end

@@ -10,6 +10,27 @@ class ArticlesController < ApplicationController
   def show
   end
 
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    if @article.update(article_params)
+      redirect_to user_path(current_user), notice: 'Article was successfully updated.'
+    else
+      str = 'Article not saved!'
+      new_line = '<br/>'
+      @article.errors.full_messages.each do |msg|
+        str << new_line
+        str << msg
+      end
+      respond_to do |format|
+        format.html { redirect_back(fallback_location: root_path)}
+      end
+    end
+  end
+
   def create
     @article = current_user.articles.build(article_params)
     if @article.valid? && @article.save

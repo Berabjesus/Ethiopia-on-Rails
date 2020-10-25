@@ -10,4 +10,5 @@ class Article < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   scope :top_voted, -> { order(vote_count: :desc).limit(1).first }
+  scope :articles_by_user, ->(current_user_id) { where('"AuthorId" = ?', current_user_id)}
 end
