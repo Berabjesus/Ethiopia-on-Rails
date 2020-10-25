@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :access_control, only: %i[new show create]
+  before_action :access_control, only: %i[new show create edit]
   def index
   end
 
@@ -23,7 +23,7 @@ class ArticlesController < ApplicationController
         str << msg
       end
       respond_to do |format|
-        format.html { redirect_back(fallback_location: root_path)}
+        format.html { redirect_to edit_article_path(@article), alert:str }
       end
     end
   end
@@ -36,7 +36,7 @@ class ArticlesController < ApplicationController
       end
       redirect_to new_article_path, notice: 'article Created Successfully'
     else 
-      errors = '<div class= "border-bottom pb-3">error</div>'
+      errors = '<div class= "border-bottom pb-3">Saving error</div>'
       errors << custom_errors(@article.errors)
       respond_to do |format|
         format.html { redirect_to new_article_path, alert: errors.html_safe }
