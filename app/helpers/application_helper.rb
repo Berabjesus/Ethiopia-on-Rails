@@ -2,7 +2,7 @@ module ApplicationHelper
   def navigation_buttons
     link = capture { link_to 'Home', articles_path, class: 'text-uppercase border-dark pr-3  mb-3 mb-md-0' }
     priority_categories(5).each do |category|
-      link << capture { link_to category.name.to_s, category_path(category), class: 'text-uppercase border-dark pr-3  mb-3 mb-md-0 ' }
+      link << capture { link_to category.name, category_path(category), class: 'text-uppercase border-dark pr-3  mb-3 mb-md-0 ' }
     end
     link << separator if logged_in?
     if logged_in?
