@@ -7,9 +7,6 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
-  def show
-  end
-
   def edit
     @article = Article.find(params[:id])
   end
@@ -44,6 +41,14 @@ class ArticlesController < ApplicationController
       respond_to do |format|
         format.html { redirect_to new_article_path, alert: errors.html_safe }
       end 
+    end
+  end
+
+  def search
+    if params[:q].nil? || params[:q].empty?
+      redirect_to articles_path, alert: 'Empty search'
+    else
+      @articles = Article.search(params[:q])
     end
   end
 

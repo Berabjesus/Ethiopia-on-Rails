@@ -1,12 +1,12 @@
 <div class="w-100 border d-flex flex-column flex-lg-row align-items-sm-center justify-content-between px-3 text-white theme-bg-1">
-  <h3>Hi <%=current_user.name%></h3>
-  <h3>You have written <%= pluralize((Article.articles_by_user(current_user)).size, 'article') %></h3>
+  <h3>Hi <%=@user.name%></h3>
+  <h3>You have written <%= pluralize((Article.articles_by_user(@user)).size, 'article') %></h3>
 </div>
 <div class="w-100 h-100 d-flex flex-wrap justify-content-center">
-  <% Article.articles_by_user(current_user).each do |article|%>
+  <% Article.articles_by_user(@user).each do |article|%>
     <div class="col-5 px-0">
       <div class="card">
-        <div class="card-img-top img-container custom-border">
+        <div class="card-img-top img-container">
           <%= image_render article %>
         </div>
         <div class="card-body">

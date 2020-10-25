@@ -1,0 +1,15 @@
+<div class="w-100 h-100 d-flex flex-wrap justify-content-center mb-4">
+  <% @articles.each do |article|%>
+    <div class="col-5 px-0">
+      <div class="card">
+        <div class="card-img-top img-container">
+          <%= image_render article %>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><%= extract_title article%></h5>
+          <p class="card-text"><%= extract_text article%></p>
+        </div>
+      </div>
+    </div>
+  <%end%>
+</div>
