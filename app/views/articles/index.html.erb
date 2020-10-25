@@ -5,8 +5,8 @@
       <%= image_render top_voted_article%>
     <%end%>
     <div class="img-description px-3 pb-2 w-100 overflow-hidden">
-      <h4 class="h4 theme-color-text pb-3 font-weight-bolder  text-wrap text-break"></h4>
-      <p class="h6 text-white font-weight-bold text-wrap text-break"></p>
+      <h4 class="h4 theme-color-text pb-3 font-weight-bolder  text-wrap text-break"><%= extract_title top_voted_article%></h4>
+      <p class="h6 text-white font-weight-bold text-wrap text-break"><%= extract_text top_voted_article%></p>
     </div>
   </div>
   <div class="col-12 col-md-3 weather_container">
@@ -15,10 +15,10 @@
 <div class="row category__container">
   <%priority_categories(4).each do |category|%>
     <div class="position-relative col-6 col-md-3 px-0 top-article">
-     
+      <%= image_render top_of_category category%>
       <div class="category-img-description position-absolute h-100 w-100 d-flex flex-column justify-content-between px-1">
         <h4 class="font-weight-bolder text-white underline pb-3 mt-2 mr-auto"><%= category.name%></h4>
-        <h5 class="mb-4 text-white text-wrap text-break"></h5>
+        <h5 class="mb-4 text-white text-wrap text-break"><%= extract_title top_of_category category %></h5>
       </div>
     </div>
   <%end%>

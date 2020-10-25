@@ -41,4 +41,20 @@ module ApplicationHelper
       image_tag('none.png', class: 'h-100 w-100 border')
     end
   end
+
+  def extract_title article
+    if defined? article.title 
+      article.title
+    else
+      "No article titles found here"
+    end
+  end
+
+  def extract_text article
+    if defined? article.text 
+      article.text
+    else
+      "No article texts found here"
+    end
+  end
 end
