@@ -8,4 +8,6 @@ class Article < ApplicationRecord
   has_many :tags
   has_many :categories, through: :tags
   mount_uploader :image, ImageUploader
+
+  scope :top_voted, -> { order(vote_count: :desc).limit(1).first }
 end

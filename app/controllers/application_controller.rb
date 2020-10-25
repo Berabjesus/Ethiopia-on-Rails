@@ -41,14 +41,14 @@ class ApplicationController < ActionController::Base
   end
 
   def top_voted_article
-    Article.order(vote_count: :desc).limit(1).first
+    Article.top_voted
   end
 
   def top_of_category category
-    Category.find(category.id).articles.order(vote_count: :desc).limit(1).first
+    Category.top_voted(category)
   end
 
-  def priority_categories
-    Category.all.order(priority: :desc).limit(4)
+  def priority_categories(limit = nil)
+    Category.top_priority(limit)
   end
 end
