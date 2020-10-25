@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       create_session @user.id
       goto_to_articles_path @user.name
     else
-      render partial: '/sessions/login'
+      redirect_to articles_path, alert: 'Username or password not found'
     end
   end
 
