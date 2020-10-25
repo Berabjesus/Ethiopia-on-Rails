@@ -62,7 +62,7 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
+  gem 'capybara', '~> 3.33'
   gem 'database_cleaner', '~> 1.8', '>= 1.8.5'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers

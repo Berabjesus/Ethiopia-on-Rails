@@ -289,7 +289,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   bullet
   byebug
-  capybara (>= 2.15)
+  capybara (~> 3.33)
   carrierwave (~> 2.1)
   database_cleaner (~> 1.8, >= 1.8.5)
   dotenv-rails
