@@ -4,8 +4,8 @@ class Article < ApplicationRecord
   validates :text, length: { minimum: 10 }
 
   belongs_to :user, class_name: "User", foreign_key: :AuthorId
-  has_many :votes
-  has_many :tags
+  has_many :votes, dependent: :destroy
+  has_many :tags, dependent: :destroy
   has_many :categories, through: :tags
   mount_uploader :image, ImageUploader
 

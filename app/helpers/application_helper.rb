@@ -33,6 +33,8 @@ module ApplicationHelper
   end
 
   def image_render article
+    return image_tag('none.png', class: 'h-100 w-100 border') unless defined? article.image
+    
     if article.image?
       image_tag(article.image.url, class: 'w-100 h-100') 
     else
