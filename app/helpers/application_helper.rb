@@ -4,7 +4,7 @@ module ApplicationHelper
     priority_categories(5).each do |category|
       link << capture { link_to category.name, category_path(category), class: 'text-uppercase border-dark pr-3  mb-3 mb-md-0 ' }
     end
-    link << separator if logged_in?
+    link << separetor if logged_in?
     if logged_in?
       link << capture { link_to 'Create new article', new_article_path, class: 'text-uppercase border-dark pl-md-2  mb-3 mb-md-0 ' }
     end
@@ -14,17 +14,17 @@ module ApplicationHelper
   def access_buttons
     if logged_in?
       link = capture { link_to image_tag('', class: 'fa fa-user pr-2'), user_path(current_user) }
-      link << separator
+      link << separetor
       link << capture { link_to 'Sign Out', session_path(current_user.id), method: :delete, class: 'text-uppercase border-dark ml-md-2 mb-3 mb-md-0' }
     else
       link = capture { link_to 'Login', articles_path, class: 'text-uppercase border-dark pr-2 mb-3 mb-md-0' }
-      link << separator
+      link << separetor
       link << capture { link_to 'Sign up', articles_path(q: 'sign up'), class: 'ml-md-1 text-uppercase mb-3 mb-md-0' }
     end
     link
   end
 
-  def separator
+  def separetor
     content_tag(:ins, '|', class: 'd-none d-md-block')
   end
 

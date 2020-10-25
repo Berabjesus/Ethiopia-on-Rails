@@ -36,4 +36,14 @@ RSpec.describe ApplicationHelper, type: :helper do
       expect(extract_text("article")).to eq("No article texts found here")
     end
   end
+
+  describe '#separetor' do
+    it 'has an ins tag' do
+      separetor.should have_selector("ins")
+    end
+
+    it "has d-none d-md-block css classes" do
+      expect(separetor).to have_css(".d-none")
+    end
+  end
 end
