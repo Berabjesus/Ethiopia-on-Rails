@@ -49,6 +49,6 @@ class ApplicationController < ActionController::Base
   end
 
   def priority_categories
-    Category.all.limit(4)
+    Category.all.order(priority: :desc).limit(4)
   end
 end
