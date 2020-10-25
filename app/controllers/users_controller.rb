@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       errors << custom_errors(@user.errors)
       respond_to do |format|
         format.html { redirect_to articles_path, alert: errors.html_safe }
-      end    
+      end
     end
   end
 
@@ -26,5 +26,4 @@ class UsersController < ApplicationController
   def user_params
     params.permit(:name, :password, :password_confirmation)
   end
-  
 end

@@ -1,7 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :access_control, only: %i[new show create edit]
-  def index
-  end
+  def index; end
 
   def new
     @article = Article.new
@@ -23,7 +22,7 @@ class ArticlesController < ApplicationController
         str << msg
       end
       respond_to do |format|
-        format.html { redirect_to edit_article_path(@article), alert:str }
+        format.html { redirect_to edit_article_path(@article), alert: str }
       end
     end
   end
@@ -35,12 +34,12 @@ class ArticlesController < ApplicationController
         Tag.create(article_id: @article.id, category_id: cid)
       end
       redirect_to new_article_path, notice: 'article Created Successfully'
-    else 
+    else
       errors = '<div class= "border-bottom pb-3">Saving error</div>'
       errors << custom_errors(@article.errors)
       respond_to do |format|
         format.html { redirect_to new_article_path, alert: errors.html_safe }
-      end 
+      end
     end
   end
 
@@ -57,7 +56,4 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:title, :text, :image)
   end
-
- 
-
 end
