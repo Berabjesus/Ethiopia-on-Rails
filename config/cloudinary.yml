@@ -1,0 +1,12 @@
+development:
+  cloud_name: "ethiopia-on-rails"
+  api_key: "916487575349882"
+  api_secret: "kh1I0AcHRkA8KhQBnj0HrSH4fCU"
+
+production:
+  cloud_name: "ethiopia-on-rails"
+  api_key: "916487575349882"
+  api_secret: "kh1I0AcHRkA8KhQBnj0HrSH4fCU"
+
+enhance_image_tag: true
+static_file_support: true
