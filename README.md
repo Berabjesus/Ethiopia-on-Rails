@@ -10,7 +10,7 @@
 [![Issues][issues-shield]][issues-url]
 [![License: MIT][license-shield]][license-url]
 
-## Built With
+# Built With
 
 - Ruby v2.7.0
 - Ruby on Rails v6.0.3
@@ -25,7 +25,7 @@
 - Bcrypt
 - Rubocop
 
-## Features
+# Features
 - Login or sign up with Google, Github or directly with the web app
 - See the available categories
 - Search for articles
@@ -34,39 +34,82 @@
 - Edit articles
 - See the highest voted article in the index page
 
-## See the Live version here - > [Live Link](https://polar-lake-14735.herokuapp.com)
+# See the Live version here - > [Live Link](https://polar-lake-14735.herokuapp.com)
 
-### Prerequisites
+# Prerequisites
 
 - Ruby: 2.6.3
 - Rails: 5.2.3
 - Postgres: >=9.5
 
-## Getting Started
+# Getting Started
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Get a local copy
 
-Things you may want to cover:
+`$ git clone https://github.com/Berabjesus/Ethiopia-on-Rails.git`
 
-* Ruby version
+### Initial Setup
 
-* System dependencies
+- Go to the local repo and run `bundle install`
+- Updaate your yarn if its out of date with `yarn install --check-files`
+- Install bootstrap with ```yarn add bootstrap jquery popper.js```
 
-* Configuration
+### Database Setup:
+```
+   rails db:create
+   rails db:migrate
+```
+### Start server:
+- Run 
+```
+    rails server
+```
 
-* Database creation
+- Go to `http://localhost:3000/`
 
-* Database initialization
+-  Login with github and google will only work in the live version because the api keys are not available publicly.
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+# Run tests
+- Run  ```bundle exec rspec ``` to run the tests.
 
-* Deployment instructions
 
-* ...
-1. Updaate your yanr if its outof date with `yarn install --check-files`
-2. Run `rails db:create`
-3. Run `rails db:migrate`
-4. Sign up and login using the app. Login with github and google will only work in the live version because the api keys are not available publicly.
+# Author
+
+👤 **Bereket Beshane**
+
+- Github: [@berabjesus](https://github.com/Berabjesus)
+- Twitter: [@bereket_ababu_b](https://twitter.com/bereket_ababu_b)
+- Linkedin: [linkedin](https://www.linkedin.com/in/bereket-beshane-a1b75a1a9/)
+
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Berabjesus/ror-social-scaffold/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse
+- Heroku
+
+## 📝 License
+
+None
+
+
+[contributors-shield]: https://img.shields.io/github/contributors/Berabjesus/Ethiopia-on-Rails
+[contributors-url]: https://github.com/Berabjesus/Ethiopia-on-Rails/contributors
+[forks-shield]: https://img.shields.io/github/forks/Berabjesus/Ethiopia-on-Rails
+[forks-url]:https://github.com/Berabjesus/Ethiopia-on-Rails/network/members
+[stars-shield]: https://img.shields.io/github/stars/Berabjesus/Ethiopia-on-Rails
+[stars-url]: https://github.com/Berabjesus/Ethiopia-on-Rails/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Berabjesus/Ethiopia-on-Rails
+[issues-url]: https://github.com/Berabjesus/Ethiopia-on-Rails/issues
+[license-shield]: https://img.shields.io/badge/License-MIT-yellow.svg
+[license-url]: https://github.com/Berabjesus/Ethiopia-on-Rails/development/LICENSE
