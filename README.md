@@ -79,6 +79,8 @@
 
 
 # Run tests
+- Run `rails db:migrate RAILS_ENV=test`
+
 - Run  ```bundle exec rspec ``` to run the tests.
 
 
