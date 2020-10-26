@@ -10,6 +10,8 @@
 [![Issues][issues-shield]][issues-url]
 [![License: MIT][license-shield]][license-url]
 
+# See the Live version here - > [Live Link](https://polar-lake-14735.herokuapp.com)
+
 ### Sign up Interface
 <img src="./docs/ss4.png" width="auto" height="auto" />
 
@@ -45,8 +47,6 @@
 - Vote for Articles
 - Edit articles
 - See the highest voted article in the index page
-
-# See the Live version here - > [Live Link](https://polar-lake-14735.herokuapp.com)
 
 # Prerequisites
 
