@@ -11,16 +11,16 @@
 [![License: MIT][license-shield]][license-url]
 
 ### Sign up Interface
-<img src="./docs/ss4.png" width="1200px" height="450px" />
+<img src="./docs/ss4.png" width="auto" height="auto" />
 
 ### Index Page
-<img src="./docs/ss0.png" width="1200px" height="450px" />
+<img src="./docs/ss0.png" width="auto" height="auto" />
 
 ### Categories Page
-<img src="./docs/ss1.png" width="1200px" height="450px" />
+<img src="./docs/ss1.png" width="auto" height="auto" />
 
 ### Mobile View
-<img src="./docs/ss3.png" width="1200px" height="450px" />
+<img src="./docs/ss3.png" width="auto" height="auto" />
 
 # Built With
 
