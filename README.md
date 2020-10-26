@@ -10,6 +10,18 @@
 [![Issues][issues-shield]][issues-url]
 [![License: MIT][license-shield]][license-url]
 
+### Sign up Interface
+<img src="./docs/ss4.png" width="1200px" height="450px" />
+
+### Index Page
+<img src="./docs/ss0.png" width="1200px" height="450px" />
+
+### Categories Page
+<img src="./docs/ss1.png" width="1200px" height="450px" />
+
+### Mobile View
+<img src="./docs/ss3.png" width="1200px" height="450px" />
+
 # Built With
 
 - Ruby v2.7.0
@@ -55,15 +67,11 @@
 - Install bootstrap with ```yarn add bootstrap jquery popper.js```
 
 ### Database Setup:
-```
-   rails db:create
-   rails db:migrate
-```
+- First run `rails db:create`
+- Then run `rails db:migrate`
+
 ### Start server:
-- Run 
-```
-    rails server
-```
+- Run `rails server`
 
 - Go to `http://localhost:3000/`
 
