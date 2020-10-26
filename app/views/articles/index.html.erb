@@ -11,14 +11,14 @@
   </div>
   <div class="row col-12 col-md-3 weather_container text-white pt-md-2 px-0">
     <div class="col-6 col-md-12 weather_content_bg pt-3 pl-3">
-      <h1><%= weather_info["location"]["country"] %>,
-      <%= weather_info["location"]["name"] %></h1>
-      <h3>Local Time: <%= weather_info["location"]["localtime"] %></h3>
+      <h1><%= exctract_weather_info[:country] %>,
+      <%= exctract_weather_info[:city] %></h1>
+      <h3>Local Time: <%= exctract_weather_info[:time]%></h3>
     </div>
     <div class="col-6 col-md-12 weather_content_bg pt-3 pl-3">
-      <%=image_tag(weather_info["current"]["condition"]["icon"])%>
-      <h1><sup>o</sup>C: <%= weather_info["current"]["temp_c"] %></h1>
-      <h1><sup>o</sup>F: <%= weather_info["current"]["temp_f"] %></h1>
+      <%=image_tag(exctract_weather_info[:icon])%>
+      <h1><sup>o</sup>C: <%= exctract_weather_info[:degree_c] %></h1>
+      <h1><sup>o</sup>F: <%= exctract_weather_info[:degree_f] %></h1>
     </div>
   </div>
 </div>

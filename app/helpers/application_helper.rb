@@ -63,4 +63,16 @@ module ApplicationHelper
       'No article texts found here'
     end
   end
+
+  def exctract_weather_info
+    current_weather = weather_info
+    country = current_weather["location"]["country"]
+    city = current_weather["location"]["name"]
+    time = current_weather["location"]["localtime"]
+    icon = current_weather["current"]["condition"]["icon"]
+    degree_c = current_weather["current"]["temp_c"]
+    degree_f = current_weather["current"]["temp_f"]
+    
+    info = {country: country, city: city, time: time, icon: icon, degree_c: degree_c, degree_f: degree_f}
+  end
 end
