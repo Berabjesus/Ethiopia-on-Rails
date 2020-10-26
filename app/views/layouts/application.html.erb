@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
-  <body>
+  <body class="h-auto">
     <% if flash[:notice]%>
       <div class="alert alert-info alert-dismissible bg-info text-info text-center bg-light w-75 mx-auto shadow-sm py-5 bg-white alert-custom form-border">
       <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -70,10 +70,10 @@
         </div>
       </nav>
     </header>
-    <main class="container-fluid main mt-5 pt-1 px-0">
+    <main class="container-fluid main mt-5 pt-1 px-0 mb-7">
       <%= yield %>
     </main>
-    <footer class="theme-bg-2 row d-flex justify-content-between align-items-center p-3 footer">
+    <footer class="theme-bg-2 row d-none d-lg-flex justify-content-between align-items-center px-3 mt-5 footer">
       <div class="text-white">
         <%= link_to articles_path, class: 'd-flex align-items-center mb-1' do%>
           <h4 class=" h3 align-self-end mb-0">ET<ins class="text-white text-decoration-none">on</ins>Rails</h4>

@@ -201,7 +201,7 @@
 
 /*** 5.0 Main ***/
 .main {
-  min-height: 82vh;
+  min-height: auto;
 }
 
 .modal-backdrop {
@@ -211,4 +211,13 @@
 .img-unavilable {
   width: 100% !important;
   height: 100% !important;
+}
+.mb-7 {
+  margin-bottom: 35px;
+}
+
+.footer {
+  position: fixed;
+  bottom:  0;
+  width: 100%;
 }
