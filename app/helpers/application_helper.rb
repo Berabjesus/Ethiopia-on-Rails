@@ -1,4 +1,5 @@
 module ApplicationHelper
+  # rubocop:disable Layout/LineLength
   def navigation_buttons
     link = capture { link_to 'Home', articles_path, class: 'text-uppercase border-dark pr-3  mb-3 mb-md-0' }
     priority_categories(5).each do |category|
@@ -29,12 +30,12 @@ module ApplicationHelper
   end
 
   def sidebar_login
-    unless logged_in?
-      if params[:q] == 'sign up'
-        render '/users/sign_up'
-      else
-        render '/sessions/login'
-      end
+    return if logged_in?
+
+    if params[:q] == 'sign up'
+      render '/users/sign_up'
+    else
+      render '/sessions/login'
     end
   end
 
@@ -73,6 +74,7 @@ module ApplicationHelper
     degree_c = current_weather['current']['temp_c']
     degree_f = current_weather['current']['temp_f']
 
-    info = { country: country, city: city, time: time, icon: icon, degree_c: degree_c, degree_f: degree_f }
+    { country: country, city: city, time: time, icon: icon, degree_c: degree_c, degree_f: degree_f }
   end
+  # rubocop:enable Layout/LineLength
 end

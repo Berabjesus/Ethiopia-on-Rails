@@ -34,14 +34,12 @@ class ApplicationController < ActionController::Base
     errors.full_messages.join(', ').gsub(',', '<br>')
   end
 
+  # rubocop:disable Metrics/MethodLength:
   def weather_info
     api_key = Rails.application.credentials.weatherapi[:weatherapi_id]
-    fallback_json = { 'location' => { 'name' => 'Addis Ababa', 'country' => 'Ethiopia', 'localtime' => '2020-10-26 15:58' }, 'current' => { 'temp_c' => 23.0, 'temp_f' => 73.4, 'condition' => { 'text' => 'Sunny', 'icon' => '//cdn.weatherapi.com/weather/64x64/day/113.png' } } }
     url = "http://api.weatherapi.com/v1/current.json?key=#{api_key}&q=addis ababa"
 
     openuri_params = {
-      # set timeout durations for HTTP connection
-      # default values for open_timeout and read_timeout is 60 seconds
       open_timeout: 1,
       read_timeout: 1
     }
@@ -49,22 +47,29 @@ class ApplicationController < ActionController::Base
     max_attempts = 4
     begin
       attempt_count += 1
-      @json = JSON.load(open(url, openuri_params).read)
-    rescue OpenURI::HTTPError => e
+      @json = JSON.parse(open(url, openuri_params).read)
+    rescue OpenURI::HTTPError
       fallback_json
     rescue Net::OpenTimeout
       fallback_json
-    rescue Errno::ECONNRESET => e
+    rescue Errno::ECONNRESET
       fallback_json
-    rescue SocketError, Net::ReadTimeout => e
+    rescue SocketError, Net::ReadTimeout
       fallback_json
       retry if attempt_count < max_attempts
-    rescue Exception
+    rescue StandardError
       fallback_json
     else
       @json
     end
   end
+  # rubocop:enable Metrics/MethodLength:
+
+  # rubocop:disable Layout/LineLength
+  def fallback_json
+    { 'location' => { 'name' => 'Addis Ababa', 'country' => 'Ethiopia', 'localtime' => '2020-10-26 15:58' }, 'current' => { 'temp_c' => 23.0, 'temp_f' => 73.4, 'condition' => { 'text' => 'Sunny', 'icon' => '//cdn.weatherapi.com/weather/64x64/day/113.png' } } }
+  end
+  # rubocop:enable Layout/LineLength
 
   def top_voted_article
     Article.top_voted
@@ -79,14 +84,14 @@ class ApplicationController < ActionController::Base
   end
 
   def create_categories
-    if Category.all.size < 5
-      categories = %w[Others Sports Politics Geography History]
-      categories.each_with_index do |category_name, index|
-        category = Category.new
-        category.name = category_name
-        category.priority = index
-        category.save
-      end
+    return unless Category.all.size < 5
+
+    categories = %w[Others Sports Politics Geography History]
+    categories.each_with_index do |category_name, index|
+      category = Category.new
+      category.name = category_name
+      category.priority = index
+      category.save
     end
   end
 end
