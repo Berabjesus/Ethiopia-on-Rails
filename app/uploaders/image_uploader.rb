@@ -58,7 +58,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   # end
 end
 
-
 # class ImageUploader < CarrierWave::Uploader::Base
 #   # Include RMagick or MiniMagick support:
 #   # include CarrierWave::RMagick
@@ -106,4 +105,3 @@ end
 #   #   "something.jpg" if original_filename
 #   # end
 # end
-

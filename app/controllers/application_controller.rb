@@ -36,31 +36,31 @@ class ApplicationController < ActionController::Base
 
   def weather_info
     api_key = Rails.application.credentials.weatherapi[:weatherapi_id]
-    fallback_json = {"location" => {"name"=> "Addis Ababa","country"=>"Ethiopia","localtime"=>"2020-10-26 15:58"},"current"=>{"temp_c"=>23.0,"temp_f"=>73.4,"condition"=>{"text"=>"Sunny","icon"=>"//cdn.weatherapi.com/weather/64x64/day/113.png"}}}
+    fallback_json = { 'location' => { 'name' => 'Addis Ababa', 'country' => 'Ethiopia', 'localtime' => '2020-10-26 15:58' }, 'current' => { 'temp_c' => 23.0, 'temp_f' => 73.4, 'condition' => { 'text' => 'Sunny', 'icon' => '//cdn.weatherapi.com/weather/64x64/day/113.png' } } }
     url = "http://api.weatherapi.com/v1/current.json?key=#{api_key}&q=addis ababa"
 
     openuri_params = {
       # set timeout durations for HTTP connection
       # default values for open_timeout and read_timeout is 60 seconds
-      :open_timeout => 1,
-      :read_timeout => 1,
+      open_timeout: 1,
+      read_timeout: 1
     }
     attempt_count = 0
-    max_attempts  = 4
+    max_attempts = 4
     begin
       attempt_count += 1
-      @json =JSON.load(open(url, openuri_params).read)
+      @json = JSON.load(open(url, openuri_params).read)
     rescue OpenURI::HTTPError => e
       fallback_json
     rescue Net::OpenTimeout
-      fallback_json 
+      fallback_json
     rescue Errno::ECONNRESET => e
-      fallback_json 
+      fallback_json
     rescue SocketError, Net::ReadTimeout => e
-      fallback_json 
+      fallback_json
       retry if attempt_count < max_attempts
     rescue Exception
-      fallback_json 
+      fallback_json
     else
       @json
     end
