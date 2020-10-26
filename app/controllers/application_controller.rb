@@ -35,7 +35,7 @@ class ApplicationController < ActionController::Base
   def weather_info
     api_key = Rails.application.credentials.weatherapi[:weatherapi_id]
     icon = '//cdn.weatherapi.com/weather/64x64/day/116.png'
-    # @json = JSON.load(open("http://api.weatherapi.com/v1/current.json?key=#{api_key}&q=addis ababa"))
+    @json = JSON.load(open("http://api.weatherapi.com/v1/current.json?key=#{api_key}&q=addis ababa"))
     # @json = JSON.load(open("http://api.weatherstack.com/current?access_key=d5bebbfbe9b87a5cc02ce0295e5539ab&query=New%20York"))
   end
 

@@ -9,7 +9,17 @@
       <p class="h6 text-white font-weight-bold text-wrap text-break"><%= extract_text top_voted_article%></p>
     </div>
   </div>
-  <div class="col-12 col-md-3 weather_container">
+  <div class="row col-12 col-md-3 weather_container text-white pt-2">
+    <div class="col-6 col-md-12">
+      <h1><%= weather_info["location"]["country"] %>,
+      <%= weather_info["location"]["name"] %></h1>
+      <h3>Local Time: <%= weather_info["location"]["localtime"] %></h3>
+    </div>
+    <div class="col-6 col-md-12">
+      <%=image_tag(weather_info["current"]["condition"]["icon"])%>
+      <h1><sup>o</sup>C: <%= weather_info["current"]["temp_c"] %></h1>
+      <h1><sup>o</sup>F: <%= weather_info["current"]["temp_f"] %></h1>
+    </div>
   </div>
 </div>
 <div class="row category__container">
