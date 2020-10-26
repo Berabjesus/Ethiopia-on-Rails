@@ -50,4 +50,16 @@ class ApplicationController < ActionController::Base
   def priority_categories(limit = nil)
     Category.top_priority(limit)
   end
+
+  def create_categories
+    if Category.all.size < 5
+      categories = %w[Others Sports Politics Geography History]
+      categories.each_with_index do |category_name, index|
+        category = Category.new
+        category.name = category_name
+        category.priority = index
+        category.save
+      end
+    end
+  end
 end

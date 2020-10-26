@@ -30,8 +30,12 @@ class ArticlesController < ApplicationController
   def create
     @article = current_user.articles.build(article_params)
     if @article.valid? && @article.save
-      params[:category].each do |cid|
-        Tag.create(article_id: @article.id, category_id: cid)
+      unless params[:category].nil?
+        params[:category].each do |cid|
+          Tag.create(article_id: @article.id, category_id: cid)
+        end
+      else
+        Tag.create(article_id: @article.id, category_id: 5)
       end
       redirect_to new_article_path, notice: 'article Created Successfully'
     else
