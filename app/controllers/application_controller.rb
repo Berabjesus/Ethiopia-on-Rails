@@ -76,7 +76,7 @@ class ApplicationController < ActionController::Base
   end
 
   def top_of_category(category)
-    Category.top_voted(category)
+    Category.most_recent(category)
   end
 
   def priority_categories(limit = nil)
