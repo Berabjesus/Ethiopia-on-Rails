@@ -11,7 +11,7 @@ RSpec.describe 'User Access', type: :system do
       click_link('Sign up')
 
       # Sign up
-      sleep 4
+      sleep 10
       fill_in('name', with: 'Test')
       fill_in('password', with: 'password')
       fill_in('password_confirmation', with: 'password')
@@ -19,7 +19,7 @@ RSpec.describe 'User Access', type: :system do
       click_button('Sign up')
 
       # Logout
-      sleep 4
+      sleep 10
       click_link('Sign Out')
     end
   end
@@ -30,33 +30,33 @@ RSpec.describe 'User Access', type: :system do
       visit('/')
 
       # sign up
-      sleep 4
+      sleep 8
       # Go to Sign Up page
       click_link('Sign up')
 
       # Sign up
-      sleep 4
+      sleep 10
       fill_in('name', with: 'Test')
       fill_in('password', with: 'password')
       fill_in('password_confirmation', with: 'password')
-      sleep 4
+      sleep 5
       click_button('Sign up')
 
       # Logout
-      sleep 4
+      sleep 10
       click_link('Sign Out')
       # logged out
 
       # login
-      sleep 4
+      sleep 10
       fill_in('name', with: 'Test')
       fill_in('password', with: 'password')
 
-      sleep 4
+      sleep 8
       click_button('Login')
 
       # Logout
-      sleep 4
+      sleep 10
       click_link('Sign Out')
     end
   end
