@@ -107,6 +107,7 @@ Give a ⭐️ if you like this project!
 
 - Microverse
 - Heroku
+- Nelson Sakwa, The designer of the [Lifestyle Articles](https://www.behance.net/gallery/14554909/liFEsTlye-Mobile-version)
 
 ## 📝 License
 
