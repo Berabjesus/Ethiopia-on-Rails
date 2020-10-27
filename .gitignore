@@ -36,3 +36,6 @@ yarn-debug.log*
 .yarn-integrity
 
 .env
+/.browserslistrc
+
+.browserslistrc
