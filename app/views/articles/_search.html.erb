@@ -1,0 +1,7 @@
+<%= form_tag("/search", :method => "get") do %>
+   <%= label_tag(:q, "Search:") %>
+   <div class="md-form active-pink active-pink-2 mb-3 mt-0">
+    <%= text_field_tag(:q,"", class: 'form-control') %>
+  </div>
+   <%= submit_tag("Search", class: 'btn btn-success') %>
+<% end %>

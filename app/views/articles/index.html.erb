@@ -1,0 +1,41 @@
+<%= sidebar_login%>
+<div class="row">
+  <div class="col-12 col-md-9 px-0 bg-dark row-1-height-md  top-article">
+    <%= link_to articles_path do%>
+      <%= image_render top_voted_article%>
+    <%end%>
+    <div class="img-description px-3 pb-2 w-100 overflow-hidden">
+      <h4 class="h4 theme-color-text pb-3 font-weight-bolder  text-wrap text-break"><%= extract_title top_voted_article%></h4>
+      <p class="h6 text-white font-weight-bold text-wrap text-break"><%= extract_text top_voted_article%></p>
+    </div>
+  </div>
+  <div class="row col-12 col-md-3 weather_container text-white pt-md-2 px-0">
+    <div class="col-6 col-md-12 weather_content_bg pt-3 pl-3">
+      <h1><%= exctract_weather_info[:country] %>,
+      <%= exctract_weather_info[:city] %></h1>
+      <h3>Local Time: <%= exctract_weather_info[:time]%></h3>
+    </div>
+    <div class="col-6 col-md-12 weather_content_bg pt-3 pl-3">
+      <%=image_tag(exctract_weather_info[:icon])%>
+      <h1><sup>o</sup>C: <%= exctract_weather_info[:degree_c] %></h1>
+      <h1><sup>o</sup>F: <%= exctract_weather_info[:degree_f] %></h1>
+    </div>
+  </div>
+</div>
+<div class="row categories ">
+  <%priority_categories(4).each do |category|%>
+    <div class="position-relative col-6 col-md-3 px-0 top-article h-100">
+      <%= link_to category_path(category) do%>
+        <%= image_render top_of_category category%>
+        <div class="category-img-description position-absolute h-100 w-100 d-flex flex-column justify-content-between px-1">
+          <h4 class="font-weight-bolder text-white underline pb-3 mt-2 mr-auto"><%= category.name%></h4>
+          <h5 class="mb-4 text-white text-wrap text-break"><%= extract_title top_of_category category %></h5>
+        </div>
+      <%end%>
+    </div>
+  <%end%>
+</div>
+
+
+
+

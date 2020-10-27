@@ -1,0 +1,223 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'users';
+@import 'articles';
+@import 'categories';
+
+/*
+*  CSS TABLE OF CONTENTS
+*
+*  1.0 - Global values
+*  2.0 - Alerts and notices
+*  3.0 - Header
+*  4.0 - Header Media Queries
+*  5.0 - Main
+*/
+
+/*** 1.0 Global values ***/
+
+/** 1.1 color variables **/
+
+:root {
+  --theme-color-1: #847f7b;
+  --theme-color-2: #4e443e;
+  --theme-color-3: #f76208;
+  --theme-color-text: #f9ae35;
+  --white: #fff;
+}
+
+/** 1.2 color classes **/
+
+.theme-bg-1 {
+  background-color: var(--theme-color-1);
+}
+
+.theme-bg-2 {
+  background-color: var(--theme-color-2);
+}
+
+.theme-bg-3 {
+  background-color: var(--theme-color-3);
+}
+
+.theme-color-1 {
+  color: var(--theme-color-1);
+}
+
+.theme-color-2 {
+  color: var(--theme-color-2);
+}
+
+.theme-color-3 {
+  color: var(--theme-color-3);
+}
+
+.theme-color-text {
+  color: var(--theme-color-text);
+}
+
+.theme-color-sm {
+  color: var(--white);
+}
+
+/** 1.3 border **/
+
+.custom-border {
+  border: 3px dashed red;
+}
+
+.form-border {
+  border: 5px solid var(--theme-color-1);
+}
+
+.underline {
+  border-bottom: 5px solid var(--theme-color-text);
+}
+
+/** 1.3 text sizes **/
+.text-size-sm {
+  font-size: 13px;
+}
+
+/*** 2.0 - Alerts and notices ***/
+
+.alert-info {
+  position: fixed;
+  top: 0;
+  left: 10vw;
+  animation: alert-animation 0.3s 1;
+  -webkit-animation: alert-animation 0.3s 1;
+  animation-fill-mode: forwards;
+  animation-delay: 3s;
+  -webkit-animation-delay: 3s;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes alert-animation {
+  0% { opacity: 1; }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-30px);
+    visibility: hidden;
+  }
+}
+
+.alert-custom {
+  z-index: 13030;
+}
+
+/*** 3.0 - Header ***/
+
+.nav-custom {
+  z-index: 5000;
+  min-height: 60px;
+  background-color: #fff;
+  border-bottom: 5px solid var(--theme-color-1);
+}
+
+.toggle-label,
+.toggle-label::before,
+.toggle-label::after {
+  width: 35px;
+  border-top: 0.3rem solid var(--theme-color-1);
+  border-radius: 8px;
+}
+
+.toggle-label {
+  position: relative;
+}
+
+.toggle-label::before,
+.toggle-label::after {
+  position: absolute;
+  top: -15px;
+  content: " ";
+}
+
+.toggle-label::after {
+  top: 6px;
+}
+
+.nav__links {
+  position: fixed;
+  top: 9%;
+  width: 50vw;
+  height: 95vh;
+  background-color: var(--theme-color-2);
+  transform: scale(0, 1);
+  transform-origin: left center;
+  transition: transform 0.3s linear;
+}
+
+.toggle-checkbox:checked ~ .nav__links {
+  transform: scale(1, 1);
+}
+
+.toggle-checkbox {
+  display: none;
+}
+
+.nav__links a:hover {
+  color: var(--theme-color-3);
+}
+
+.logo__container {
+  background-image: url("https://res.cloudinary.com/ethiopia-on-rails/image/upload/v1603732397/logo_fk0ggu.png");
+  background-size: cover;
+  background-position: 17px 1px;
+  background-repeat: no-repeat;
+}
+
+.logo {
+  height: 40px;
+}
+
+.access__btns {
+  width: 160px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/*** 4.0 - Header Media Queries ***/
+
+@media screen and (min-width: 768px) {
+  .theme-color-lg {
+    color: var(--theme-color-2);
+  }
+
+  .nav__links {
+    position: relative;
+    height: auto;
+    width: 100%;
+    flex-direction: row;
+    background-color: unset;
+    transform: scale(1, 1);
+    transform-origin: unset;
+    transition: unset;
+  }
+}
+
+/*** 5.0 Main ***/
+.main {
+  min-height: auto;
+}
+
+.modal-backdrop {
+  z-index: 0;
+}
+
+.img-unavilable {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.mb-7 {
+  margin-bottom: 35px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

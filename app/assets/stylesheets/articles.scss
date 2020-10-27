@@ -1,0 +1,82 @@
+/*
+*  CSS TABLE OF CONTENTS
+*
+*  1.0 - Global values
+*  2.0 - row 1
+*  3.0 - sidebars
+*  4.0 - categories
+*/
+
+/*** 1.0 Global values ***/
+
+/*** 2.0 Row 1 ***/
+.top-article {
+  position: relative;
+}
+
+.top-article::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.753) 10%, rgba(255, 255, 255, 0) 50%);
+  background-size: cover;
+}
+
+.img-description {
+  position: absolute;
+  bottom: 0;
+}
+
+.category-img-description {
+  top: 0;
+}
+
+.weather_container {
+  height: 92vh;
+  background: linear-gradient(to left, rgba(59, 56, 56, 0.068), rgba(128, 130, 211, 0.103)), url("https://res.cloudinary.com/ethiopia-on-rails/image/upload/v1603715181/pikrepo.com_vvz2wk.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.weather_content_bg {
+  background-color: rgba(31, 37, 48, 0.575);
+}
+
+@media screen and (max-width: 768px) {
+  .row-1-height-md {
+    position: relative;
+    height: 55vw;
+  }
+
+  .img-description {
+    bottom: 100px;
+  }
+
+  .weather_container {
+    height: 40vh;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .row-1-height-md {
+    position: relative;
+    height: 92vh !important;
+  }
+}
+
+/*** 3.0 sidebars  ***/
+
+.side__bar {
+  position: fixed;
+  top: 10vh;
+  z-index: 2000;
+  right: 1vw;
+  height: 85vh;
+}
+
+.categories {
+  position: relative;
+  min-height: 40vh;
+  height: 40vh;
+}

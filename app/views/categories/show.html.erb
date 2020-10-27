@@ -1,0 +1,7 @@
+<div class="d-flex flex-wrap col-12 px-0 mt-2 category__container">
+  <% @category.articles.include_votes.each_with_index do |article, index|%>
+    <div class="row col-12 col-lg-6 px-0 category-row ">
+      <%= category_view_pattern(index, article, @category)%>
+    </div>
+  <%end%>
+</div>

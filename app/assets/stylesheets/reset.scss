@@ -1,0 +1,63 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: auto;
+}
+
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: initial;
+}
+
+button {
+  border: 0;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+img {
+  object-fit: cover;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
