@@ -43,11 +43,7 @@ class ArticlesController < ApplicationController
       end
       redirect_to new_article_path, notice: 'article Created Successfully'
     else
-      errors = '<div class= "border-bottom pb-3">Saving error</div>'
-      errors << custom_errors(@article.errors)
-      respond_to do |format|
-        format.html { redirect_to new_article_path, alert: errors.html_safe }
-      end
+      render 'new'
     end
   end
 
