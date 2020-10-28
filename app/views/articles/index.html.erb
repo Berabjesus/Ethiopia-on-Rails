@@ -1,6 +1,6 @@
 <%= sidebar_login%>
 <div class="row">
-  <%= link_to new_article_path, class: 'col-12 col-md-9 px-0 bg-dark row-1-height-md  top-article' do %>
+  <%= link_to article_path(top_voted_article), class: 'col-12 col-md-9 px-0 bg-dark row-1-height-md  top-article' do %>
       <%= image_render top_voted_article%>
       <div class="img-description px-3 pb-2 w-100 overflow-hidden">
         <h4 class="h4 theme-color-text pb-3 font-weight-bolder  text-wrap text-break"><%= extract_title top_voted_article%></h4>
