@@ -12,7 +12,7 @@
 
 # See the Live version here - > [Live Link](https://polar-lake-14735.herokuapp.com)
 
-### Sign up and Home Interface
+### Sign up Interface
 <img src="./docs/ss4.png" width="auto" height="auto" />
 
 ### Index Page
