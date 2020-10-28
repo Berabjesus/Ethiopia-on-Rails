@@ -1,14 +1,12 @@
 <%= sidebar_login%>
 <div class="row">
-  <div class="col-12 col-md-9 px-0 bg-dark row-1-height-md  top-article">
-    <%= link_to articles_path do%>
+  <%= link_to new_article_path, class: 'col-12 col-md-9 px-0 bg-dark row-1-height-md  top-article' do %>
       <%= image_render top_voted_article%>
-    <%end%>
-    <div class="img-description px-3 pb-2 w-100 overflow-hidden">
-      <h4 class="h4 theme-color-text pb-3 font-weight-bolder  text-wrap text-break"><%= extract_title top_voted_article%></h4>
-      <p class="h6 text-white font-weight-bold text-wrap text-break"><%= extract_text top_voted_article%></p>
-    </div>
-  </div>
+      <div class="img-description px-3 pb-2 w-100 overflow-hidden">
+        <h4 class="h4 theme-color-text pb-3 font-weight-bolder  text-wrap text-break"><%= extract_title top_voted_article%></h4>
+        <p class="h6 text-white font-weight-bold text-wrap text-break"><%= extract_text top_voted_article%></p>
+      </div>
+  <%end%>
   <div class="row col-12 col-md-3 weather_container text-white pt-md-2 px-0">
     <div class="col-6 col-md-12 weather_content_bg pt-3 pl-3">
       <h1><%= exctract_weather_info[:country] %>,
