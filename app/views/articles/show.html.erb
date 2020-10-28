@@ -1,0 +1,20 @@
+
+<div class="w-100 h-100 d-flex flex-wrap justify-content-center">
+  <div class="col-12 col-md-5 px-0">
+    <div class="card">
+      <div class="card-img-top img-container">
+        <%= image_render @article %>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%=@article.title%></h5>
+        <p class="card-text"><%= @article.text%></p>
+      </div>
+      <div class="d-flex pl-1 pb-1">
+        <span class="mr-3">
+          <%= vote_button @article%>
+        </span>
+        <p class="h6 align-self-end">Has <%= pluralize(@article.vote_count, 'vote')%></p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -2,6 +2,10 @@ class ArticlesController < ApplicationController
   before_action :access_control, only: %i[new show create edit]
   def index; end
 
+  def show
+    @article = Article.find(params[:id])
+  end
+
   def new
     @article = Article.new
   end
@@ -39,11 +43,7 @@ class ArticlesController < ApplicationController
       end
       redirect_to new_article_path, notice: 'article Created Successfully'
     else
-      errors = '<div class= "border-bottom pb-3">Saving error</div>'
-      errors << custom_errors(@article.errors)
-      respond_to do |format|
-        format.html { redirect_to new_article_path, alert: errors.html_safe }
-      end
+      render 'new'
     end
   end
 

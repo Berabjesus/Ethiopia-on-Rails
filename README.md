@@ -21,9 +21,6 @@
 ### Categories Page
 <img src="./docs/ss1.png" width="auto" height="auto" />
 
-### Mobile View
-<img src="./docs/ss3.png" width="auto" height="auto" />
-
 # Built With
 
 - Ruby v2.7.0
@@ -41,9 +38,10 @@
 
 # Features
 - Login or sign up with Google, Github or directly with the web app
-- See the available categories
+- Access the available categories
 - Search for articles
-- See articles created by the logged in user
+- Access articles created by the logged in user
+- Access individual article to read more
 - Vote for Articles
 - Edit articles
 - See the highest voted article in the index page
