@@ -12,7 +12,7 @@
         <div class="card-body">
           <h5 class="card-title"><%=article.title%></h5>
           <p class="card-text"><%= article.text%></p>
-          <%= link_to 'edit', edit_article_path(article), class: 'btn theme-bg-2 text-white mt-3'%>
+          <%= edit_access article %>
         </div>
       </div>
     </div>
