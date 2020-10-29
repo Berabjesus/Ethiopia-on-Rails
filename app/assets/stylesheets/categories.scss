@@ -18,14 +18,10 @@
   height: 100px;
 }
 
-.article-container::after {
-  content: '';
-  width: 100%;
-  height: auto;
+.read_more-container {
   position: absolute;
   bottom: 0;
-  border: 3px dashed red;
-
+  border: 3px solid red;
 }
 
 @media screen and (max-width: 576px) {
