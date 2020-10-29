@@ -14,11 +14,21 @@
 }
 
 .article-container {
+  position: relative;
   height: 100px;
 }
 
 .article-content-height {
   height: 100%;
+}
+
+.article-container::after {
+  content: '';
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  border: 3px dashed red;
+
 }
 
 @media screen and (max-width: 576px) {
