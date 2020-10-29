@@ -42,6 +42,7 @@
 - Search for articles
 - Access articles created by the logged in user
 - Access individual article to read more
+- See who wrote the article and when
 - Vote for Articles
 - Edit articles
 - See the highest voted article in the index page

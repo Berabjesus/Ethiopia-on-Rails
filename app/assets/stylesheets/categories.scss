@@ -1,7 +1,6 @@
 .category__container {
   position: relative;
   height: auto;
-  min-height: 10vh;
   background-image: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.178), rgba(233, 216, 216, 0.13) 3px, #f1e8e821 5px);
 }
 
@@ -14,11 +13,17 @@
 }
 
 .article-container {
-  height: 100px;
+  position: relative;
+  height: 150px;
 }
 
-.article-content-height {
-  height: 100%;
+.article-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  background: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.178), rgba(233, 216, 216, 0.13) 3px, #f1e8e821 5px), linear-gradient(to top, white, rgba(255, 255, 255, 0.534));
 }
 
 @media screen and (max-width: 576px) {
