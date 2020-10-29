@@ -10,7 +10,7 @@
           <h5 class="card-title"><%=@article.title%></h5>
           <em>Written by <%= @article.user.name%> <%= time_ago_in_words(@article.created_at)%> ago</em>
         </div>
-        <p class="card-text"><%= @article.text%></p>
+        <p class="card-text pt-3"><%= @article.text%></p>
       </div>
       <div class="d-flex pl-1 pb-1">
         <span class="mr-3">
