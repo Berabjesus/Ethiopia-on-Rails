@@ -10,7 +10,7 @@
 [![Issues][issues-shield]][issues-url]
 [![License: MIT][license-shield]][license-url]
 
-# See the Live version here - > [Live Link](https://polar-lake-14735.herokuapp.com)
+# See the Live version here - > [Live Link](https://et-on-rails.herokuapp.com/)
 
 ### Sign up Interface
 <img src="./docs/ss4.png" width="auto" height="auto" />
