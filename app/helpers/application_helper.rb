@@ -80,5 +80,9 @@ module ApplicationHelper
   def edit_access article
     link_to 'edit', edit_article_path(article), class: 'btn theme-bg-2 text-white mt-3' if current_user == article.user
   end
+
+  def show_article_content
+    render 'show'
+  end
   # rubocop:enable Layout/LineLength
 end
