@@ -1,6 +1,6 @@
 # Ethiopia on Rails, Articles Web App About Ethiopia
 
-> This is a Ruby on Rails Capstone project in Microverse's rails curriculum, to build a Ruby on Rails application where people can write articles. Find it the project description [here](https://www.notion.so/Lifestyle-articles-b82a5f10122b4cec924cd5d4a6cf7561#55d51338627b42bd95d86e2d1e58f105).
+> This is a Ruby on Rails Capstone project in Microverse's rails curriculum, to build a Ruby on Rails application where people can write articles. Find the project description [here](https://www.notion.so/Lifestyle-articles-b82a5f10122b4cec924cd5d4a6cf7561#55d51338627b42bd95d86e2d1e58f105).
 
 > This website is created to allow users to view, create, update, and store articles and images about the country Ethiopia. It has several other functionalities like login through Github and Google, see the current weather in Ethiopia, search an article and view articles by the current user.
 
