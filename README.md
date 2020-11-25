@@ -15,9 +15,6 @@
 ### Sign up Interface
 <img src="./docs/ss4.png" width="auto" height="auto" />
 
-### Index Page
-<img src="./docs/ss0.png" width="auto" height="auto" />
-
 ### Categories Page
 <img src="./docs/ss1.png" width="auto" height="auto" />
 
