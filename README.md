@@ -12,11 +12,8 @@
 
 # See the Live version here - > [Live Link](https://et-on-rails.herokuapp.com/)
 
-### Sign up Interface
+### Sign up, login and Index Interface
 <img src="./docs/ss4.png" width="auto" height="auto" />
-
-### Index Page
-<img src="./docs/ss0.png" width="auto" height="auto" />
 
 ### Categories Page
 <img src="./docs/ss1.png" width="auto" height="auto" />
@@ -52,6 +49,10 @@
 - Ruby: 2.6.3
 - Rails: 5.2.3
 - Postgres: >=9.5
+
+# ERD diagram
+
+<img src="./docs/Erd.JPG" width="auto" height="auto" />
 
 # Getting Started
 
