@@ -50,6 +50,10 @@
 - Rails: 5.2.3
 - Postgres: >=9.5
 
+# ERD diagram
+
+<img src="./docs/Erd.JPG" width="auto" height="auto" />
+
 # Getting Started
 
 ### Get a local copy
